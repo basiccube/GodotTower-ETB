@@ -1,0 +1,620 @@
+[gd_scene load_steps=414 format=2]
+
+[ext_resource path="res://Objects/Player/sprites/idle_49.png" type="Texture" id=1]
+[ext_resource path="res://Objects/Player/sprites/idle_50.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Player/sprites/idle_51.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Player/sprites/idle_53.png" type="Texture" id=4]
+[ext_resource path="res://Objects/Player/sprites/idle_44.png" type="Texture" id=5]
+[ext_resource path="res://Objects/Player/sprites/idle_45.png" type="Texture" id=6]
+[ext_resource path="res://Objects/Player/sprites/idle_47.png" type="Texture" id=7]
+[ext_resource path="res://Objects/Player/sprites/idle_52.png" type="Texture" id=8]
+[ext_resource path="res://Objects/Player/sprites/idle_46.png" type="Texture" id=9]
+[ext_resource path="res://Objects/Player/sprites/idle_48.png" type="Texture" id=10]
+[ext_resource path="res://Objects/Player/sprites/idle_56.png" type="Texture" id=11]
+[ext_resource path="res://Objects/Player/sprites/idle_57.png" type="Texture" id=12]
+[ext_resource path="res://Objects/Player/sprites/idle_54.png" type="Texture" id=13]
+[ext_resource path="res://Objects/Player/sprites/idle_55.png" type="Texture" id=14]
+[ext_resource path="res://Objects/Player/sprites/idle_63.png" type="Texture" id=15]
+[ext_resource path="res://Objects/Player/sprites/idle_64.png" type="Texture" id=16]
+[ext_resource path="res://Objects/Player/sprites/idle_66.png" type="Texture" id=17]
+[ext_resource path="res://Objects/Player/sprites/idle_61.png" type="Texture" id=18]
+[ext_resource path="res://Objects/Player/sprites/idle_68.png" type="Texture" id=19]
+[ext_resource path="res://Objects/Player/sprites/idle_65.png" type="Texture" id=20]
+[ext_resource path="res://Objects/Player/sprites/idle_69.png" type="Texture" id=21]
+[ext_resource path="res://Objects/Player/sprites/idle_71.png" type="Texture" id=22]
+[ext_resource path="res://Objects/Player/sprites/idle_72.png" type="Texture" id=23]
+[ext_resource path="res://Objects/Player/sprites/idle_67.png" type="Texture" id=24]
+[ext_resource path="res://Objects/Player/sprites/idle_70.png" type="Texture" id=25]
+[ext_resource path="res://Objects/Player/sprites/idle_62.png" type="Texture" id=26]
+[ext_resource path="res://Objects/Player/sprites/idle_58.png" type="Texture" id=27]
+[ext_resource path="res://Objects/Player/sprites/idle_59.png" type="Texture" id=28]
+[ext_resource path="res://Objects/Player/sprites/idle_34.png" type="Texture" id=29]
+[ext_resource path="res://Objects/Player/sprites/idle_36.png" type="Texture" id=30]
+[ext_resource path="res://Objects/Player/sprites/idle_38.png" type="Texture" id=31]
+[ext_resource path="res://Objects/Player/sprites/idle_32.png" type="Texture" id=32]
+[ext_resource path="res://Objects/Player/sprites/idle_42.png" type="Texture" id=33]
+[ext_resource path="res://Objects/Player/sprites/idle_43.png" type="Texture" id=34]
+[ext_resource path="res://Objects/Player/sprites/idle_35.png" type="Texture" id=35]
+[ext_resource path="res://Objects/Player/sprites/idle_31.png" type="Texture" id=36]
+[ext_resource path="res://Objects/Player/sprites/idle_33.png" type="Texture" id=37]
+[ext_resource path="res://Objects/Player/sprites/idle_37.png" type="Texture" id=38]
+[ext_resource path="res://Objects/Player/sprites/idle_39.png" type="Texture" id=39]
+[ext_resource path="res://Objects/Player/sprites/idle_40.png" type="Texture" id=40]
+[ext_resource path="res://Objects/Player/sprites/idle_41.png" type="Texture" id=41]
+[ext_resource path="res://Objects/Player/sprites/idle_3.png" type="Texture" id=42]
+[ext_resource path="res://Objects/Player/sprites/idle_4.png" type="Texture" id=43]
+[ext_resource path="res://Objects/Player/sprites/idle_0.png" type="Texture" id=44]
+[ext_resource path="res://Objects/Player/sprites/idle_1.png" type="Texture" id=45]
+[ext_resource path="res://Objects/Player/sprites/idle_5.png" type="Texture" id=46]
+[ext_resource path="res://Objects/Player/sprites/idle_6.png" type="Texture" id=47]
+[ext_resource path="res://Objects/Player/sprites/idle_7.png" type="Texture" id=48]
+[ext_resource path="res://Objects/Player/sprites/idle_8.png" type="Texture" id=49]
+[ext_resource path="res://Objects/Player/sprites/idle_2.png" type="Texture" id=50]
+[ext_resource path="res://Objects/Player/sprites/idle_9.png" type="Texture" id=51]
+[ext_resource path="res://Objects/Player/sprites/idle_11.png" type="Texture" id=52]
+[ext_resource path="res://Objects/Player/sprites/idle_10.png" type="Texture" id=53]
+[ext_resource path="res://Objects/Player/sprites/idle_12.png" type="Texture" id=54]
+[ext_resource path="res://Objects/Player/sprites/idle_13.png" type="Texture" id=55]
+[ext_resource path="res://Objects/Player/sprites/idle_28.png" type="Texture" id=56]
+[ext_resource path="res://Objects/Player/sprites/idle_15.png" type="Texture" id=57]
+[ext_resource path="res://Objects/Player/sprites/idle_22.png" type="Texture" id=58]
+[ext_resource path="res://Objects/Player/sprites/idle_23.png" type="Texture" id=59]
+[ext_resource path="res://Objects/Player/sprites/idle_21.png" type="Texture" id=60]
+[ext_resource path="res://Objects/Player/sprites/idle_18.png" type="Texture" id=61]
+[ext_resource path="res://Objects/Player/sprites/idle_24.png" type="Texture" id=62]
+[ext_resource path="res://Objects/Player/sprites/idle_19.png" type="Texture" id=63]
+[ext_resource path="res://Objects/Player/sprites/idle_25.png" type="Texture" id=64]
+[ext_resource path="res://Objects/Player/sprites/idle_26.png" type="Texture" id=65]
+[ext_resource path="res://Objects/Player/sprites/idle_29.png" type="Texture" id=66]
+[ext_resource path="res://Objects/Player/sprites/idle_16.png" type="Texture" id=67]
+[ext_resource path="res://Objects/Player/sprites/idle_17.png" type="Texture" id=68]
+[ext_resource path="res://Objects/Player/sprites/idle_30.png" type="Texture" id=69]
+[ext_resource path="res://Objects/Player/sprites/idle_14.png" type="Texture" id=70]
+[ext_resource path="res://Objects/Player/sprites/idle_20.png" type="Texture" id=71]
+[ext_resource path="res://Objects/Player/sprites/idle_27.png" type="Texture" id=72]
+[ext_resource path="res://Objects/Player/sprites/idle_60.png" type="Texture" id=73]
+[ext_resource path="res://Objects/Player/sprites/move_2.png" type="Texture" id=74]
+[ext_resource path="res://Objects/Player/sprites/move_4.png" type="Texture" id=75]
+[ext_resource path="res://Objects/Player/sprites/move_9.png" type="Texture" id=76]
+[ext_resource path="res://Objects/Player/sprites/move_11.png" type="Texture" id=77]
+[ext_resource path="res://Objects/Player/sprites/move_7.png" type="Texture" id=78]
+[ext_resource path="res://Objects/Player/sprites/move_1.png" type="Texture" id=79]
+[ext_resource path="res://Objects/Player/sprites/move_8.png" type="Texture" id=80]
+[ext_resource path="res://Objects/Player/sprites/move_5.png" type="Texture" id=81]
+[ext_resource path="res://Objects/Player/sprites/move_6.png" type="Texture" id=82]
+[ext_resource path="res://Objects/Player/sprites/move_10.png" type="Texture" id=83]
+[ext_resource path="res://Objects/Player/sprites/move_3.png" type="Texture" id=84]
+[ext_resource path="res://Objects/Player/sprites/jump_3.png" type="Texture" id=85]
+[ext_resource path="res://Objects/Player/sprites/jump_0.png" type="Texture" id=86]
+[ext_resource path="res://Objects/Player/sprites/jump_4.png" type="Texture" id=87]
+[ext_resource path="res://Objects/Player/sprites/jump_1.png" type="Texture" id=88]
+[ext_resource path="res://Objects/Player/sprites/jump_2.png" type="Texture" id=89]
+[ext_resource path="res://Objects/Player/sprites/jump_5.png" type="Texture" id=90]
+[ext_resource path="res://Objects/Player/sprites/jump_10.png" type="Texture" id=91]
+[ext_resource path="res://Objects/Player/sprites/fall_2.png" type="Texture" id=92]
+[ext_resource path="res://Objects/Player/sprites/jump_11.png" type="Texture" id=93]
+[ext_resource path="res://Objects/Player/sprites/jump_7.png" type="Texture" id=94]
+[ext_resource path="res://Objects/Player/sprites/fall_1.png" type="Texture" id=95]
+[ext_resource path="res://Objects/Player/sprites/jump_6.png" type="Texture" id=96]
+[ext_resource path="res://Objects/Player/sprites/land_1.png" type="Texture" id=97]
+[ext_resource path="res://Objects/Player/sprites/jump_9.png" type="Texture" id=98]
+[ext_resource path="res://Objects/Player/sprites/land_3.png" type="Texture" id=99]
+[ext_resource path="res://Objects/Player/sprites/land_0.png" type="Texture" id=100]
+[ext_resource path="res://Objects/Player/sprites/land_2.png" type="Texture" id=101]
+[ext_resource path="res://Objects/Player/sprites/land_5.png" type="Texture" id=102]
+[ext_resource path="res://Objects/Player/sprites/land_4.png" type="Texture" id=103]
+[ext_resource path="res://Objects/Player/sprites/fall_0.png" type="Texture" id=104]
+[ext_resource path="res://Objects/Player/sprites/move_0.png" type="Texture" id=105]
+[ext_resource path="res://Objects/Player/sprites/jump_8.png" type="Texture" id=106]
+[ext_resource path="res://Objects/Player/sprites/panic_1.png" type="Texture" id=107]
+[ext_resource path="res://Objects/Player/sprites/panic_4.png" type="Texture" id=108]
+[ext_resource path="res://Objects/Player/sprites/fall2_1.png" type="Texture" id=109]
+[ext_resource path="res://Objects/Player/sprites/jump2_4.png" type="Texture" id=110]
+[ext_resource path="res://Objects/Player/sprites/jump2_8.png" type="Texture" id=111]
+[ext_resource path="res://Objects/Player/sprites/panic_6.png" type="Texture" id=112]
+[ext_resource path="res://Objects/Player/sprites/panic_0.png" type="Texture" id=113]
+[ext_resource path="res://Objects/Player/sprites/jump2_7.png" type="Texture" id=114]
+[ext_resource path="res://Objects/Player/sprites/panic_2.png" type="Texture" id=115]
+[ext_resource path="res://Objects/Player/sprites/panic_7.png" type="Texture" id=116]
+[ext_resource path="res://Objects/Player/sprites/jump2_1.png" type="Texture" id=117]
+[ext_resource path="res://Objects/Player/sprites/jump2_2.png" type="Texture" id=118]
+[ext_resource path="res://Objects/Player/sprites/jump2_3.png" type="Texture" id=119]
+[ext_resource path="res://Objects/Player/sprites/jump2_9.png" type="Texture" id=120]
+[ext_resource path="res://Objects/Player/sprites/jump2_11.png" type="Texture" id=121]
+[ext_resource path="res://Objects/Player/sprites/fall2_2.png" type="Texture" id=122]
+[ext_resource path="res://Objects/Player/sprites/panic_5.png" type="Texture" id=123]
+[ext_resource path="res://Objects/Player/sprites/panic_3.png" type="Texture" id=124]
+[ext_resource path="res://Objects/Player/sprites/jump2_0.png" type="Texture" id=125]
+[ext_resource path="res://Objects/Player/sprites/jump2_5.png" type="Texture" id=126]
+[ext_resource path="res://Objects/Player/sprites/jump2_10.png" type="Texture" id=127]
+[ext_resource path="res://Objects/Player/sprites/land2_0.png" type="Texture" id=128]
+[ext_resource path="res://Objects/Player/sprites/jump2_6.png" type="Texture" id=129]
+[ext_resource path="res://Objects/Player/sprites/land2_1.png" type="Texture" id=130]
+[ext_resource path="res://Objects/Player/sprites/land2_2.png" type="Texture" id=131]
+[ext_resource path="res://Objects/Player/sprites/land2_3.png" type="Texture" id=132]
+[ext_resource path="res://Objects/Player/sprites/land2_4.png" type="Texture" id=133]
+[ext_resource path="res://Objects/Player/sprites/fall2_0.png" type="Texture" id=134]
+[ext_resource path="res://Objects/Player/obj_player.gd" type="Script" id=135]
+[ext_resource path="res://Shaders/PaletteSwap.gdshader" type="Shader" id=136]
+[ext_resource path="res://Objects/Player/sprites/idledance_1.png" type="Texture" id=137]
+[ext_resource path="res://Objects/Player/sprites/idledance_4.png" type="Texture" id=138]
+[ext_resource path="res://Objects/Player/sprites/idledance_8.png" type="Texture" id=139]
+[ext_resource path="res://Objects/Player/sprites/idledance_9.png" type="Texture" id=140]
+[ext_resource path="res://Objects/Player/sprites/idledance_0.png" type="Texture" id=141]
+[ext_resource path="res://Objects/Player/sprites/idledance_5.png" type="Texture" id=142]
+[ext_resource path="res://Objects/Player/sprites/idledance_11.png" type="Texture" id=143]
+[ext_resource path="res://Objects/Player/sprites/idledance_12.png" type="Texture" id=144]
+[ext_resource path="res://Objects/Player/sprites/idledance_16.png" type="Texture" id=145]
+[ext_resource path="res://Objects/Player/sprites/idledance_18.png" type="Texture" id=146]
+[ext_resource path="res://Objects/Player/sprites/idledance_2.png" type="Texture" id=147]
+[ext_resource path="res://Objects/Player/sprites/idledance_15.png" type="Texture" id=148]
+[ext_resource path="res://Objects/Player/sprites/idledance_14.png" type="Texture" id=149]
+[ext_resource path="res://Objects/Player/sprites/idledance_10.png" type="Texture" id=150]
+[ext_resource path="res://Objects/Player/sprites/idledance_6.png" type="Texture" id=151]
+[ext_resource path="res://Objects/Player/sprites/idledance_7.png" type="Texture" id=152]
+[ext_resource path="res://Objects/Player/sprites/idledance_13.png" type="Texture" id=153]
+[ext_resource path="res://Objects/Player/sprites/idledance_17.png" type="Texture" id=154]
+[ext_resource path="res://Objects/Player/sprites/idledance_3.png" type="Texture" id=155]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_8.png" type="Texture" id=156]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_1.png" type="Texture" id=157]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_36.png" type="Texture" id=158]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_1.png" type="Texture" id=159]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_8.png" type="Texture" id=160]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_9.png" type="Texture" id=161]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_3.png" type="Texture" id=162]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_6.png" type="Texture" id=163]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_4.png" type="Texture" id=164]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_18.png" type="Texture" id=165]
+[ext_resource path="res://Objects/Player/sprites/idledance_35.png" type="Texture" id=166]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_15.png" type="Texture" id=167]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_25.png" type="Texture" id=168]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_29.png" type="Texture" id=169]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_4.png" type="Texture" id=170]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_23.png" type="Texture" id=171]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_33.png" type="Texture" id=172]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_6.png" type="Texture" id=173]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_7.png" type="Texture" id=174]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_14.png" type="Texture" id=175]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_30.png" type="Texture" id=176]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_2.png" type="Texture" id=177]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_11.png" type="Texture" id=178]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_10.png" type="Texture" id=179]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_22.png" type="Texture" id=180]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_3.png" type="Texture" id=181]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_14.png" type="Texture" id=182]
+[ext_resource path="res://Objects/Player/sprites/idledance_32.png" type="Texture" id=183]
+[ext_resource path="res://Objects/Player/sprites/idledance_34.png" type="Texture" id=184]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_31.png" type="Texture" id=185]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_32.png" type="Texture" id=186]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_26.png" type="Texture" id=187]
+[ext_resource path="res://Objects/Player/sprites/idledance_33.png" type="Texture" id=188]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_37.png" type="Texture" id=189]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_9.png" type="Texture" id=190]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_19.png" type="Texture" id=191]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_12.png" type="Texture" id=192]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_16.png" type="Texture" id=193]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_0.png" type="Texture" id=194]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_7.png" type="Texture" id=195]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_27.png" type="Texture" id=196]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_10.png" type="Texture" id=197]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_18.png" type="Texture" id=198]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_0.png" type="Texture" id=199]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_16.png" type="Texture" id=200]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_2.png" type="Texture" id=201]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_28.png" type="Texture" id=202]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_34.png" type="Texture" id=203]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_35.png" type="Texture" id=204]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_24.png" type="Texture" id=205]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_13.png" type="Texture" id=206]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_15.png" type="Texture" id=207]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_17.png" type="Texture" id=208]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_20.png" type="Texture" id=209]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_21.png" type="Texture" id=210]
+[ext_resource path="res://Objects/Player/sprites/idledance_36.png" type="Texture" id=211]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_5.png" type="Texture" id=212]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_5.png" type="Texture" id=213]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_19.png" type="Texture" id=214]
+[ext_resource path="res://Objects/Player/sprites/idledance_31.png" type="Texture" id=215]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_12.png" type="Texture" id=216]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_11.png" type="Texture" id=217]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_13.png" type="Texture" id=218]
+[ext_resource path="res://Objects/Player/sprites/idlefrown_17.png" type="Texture" id=219]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_20.png" type="Texture" id=220]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_24.png" type="Texture" id=221]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_21.png" type="Texture" id=222]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_25.png" type="Texture" id=223]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_22.png" type="Texture" id=224]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_23.png" type="Texture" id=225]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_32.png" type="Texture" id=226]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_41.png" type="Texture" id=227]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_27.png" type="Texture" id=228]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_51.png" type="Texture" id=229]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_47.png" type="Texture" id=230]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_26.png" type="Texture" id=231]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_29.png" type="Texture" id=232]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_31.png" type="Texture" id=233]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_34.png" type="Texture" id=234]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_36.png" type="Texture" id=235]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_38.png" type="Texture" id=236]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_35.png" type="Texture" id=237]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_40.png" type="Texture" id=238]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_44.png" type="Texture" id=239]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_45.png" type="Texture" id=240]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_37.png" type="Texture" id=241]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_39.png" type="Texture" id=242]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_42.png" type="Texture" id=243]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_48.png" type="Texture" id=244]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_46.png" type="Texture" id=245]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_30.png" type="Texture" id=246]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_43.png" type="Texture" id=247]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_50.png" type="Texture" id=248]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_49.png" type="Texture" id=249]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_33.png" type="Texture" id=250]
+[ext_resource path="res://Objects/Player/sprites/idlevomitblood_28.png" type="Texture" id=251]
+[ext_resource path="res://Objects/Player/sprites/idledance_20.png" type="Texture" id=252]
+[ext_resource path="res://Objects/Player/sprites/idledance_24.png" type="Texture" id=253]
+[ext_resource path="res://Objects/Player/sprites/idledance_26.png" type="Texture" id=254]
+[ext_resource path="res://Objects/Player/sprites/idledance_19.png" type="Texture" id=255]
+[ext_resource path="res://Objects/Player/sprites/idledance_27.png" type="Texture" id=256]
+[ext_resource path="res://Objects/Player/sprites/idledance_21.png" type="Texture" id=257]
+[ext_resource path="res://Objects/Player/sprites/idledance_22.png" type="Texture" id=258]
+[ext_resource path="res://Objects/Player/sprites/idledance_25.png" type="Texture" id=259]
+[ext_resource path="res://Objects/Player/sprites/idledance_23.png" type="Texture" id=260]
+[ext_resource path="res://Objects/Player/sprites/idledance_28.png" type="Texture" id=261]
+[ext_resource path="res://Objects/Player/sprites/idledance_29.png" type="Texture" id=262]
+[ext_resource path="res://Objects/Player/sprites/idledance_30.png" type="Texture" id=263]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_46.png" type="Texture" id=264]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_47.png" type="Texture" id=265]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_44.png" type="Texture" id=266]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_50.png" type="Texture" id=267]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_48.png" type="Texture" id=268]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_49.png" type="Texture" id=269]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_45.png" type="Texture" id=270]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_51.png" type="Texture" id=271]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_8.png" type="Texture" id=272]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_15.png" type="Texture" id=273]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_21.png" type="Texture" id=274]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_18.png" type="Texture" id=275]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_24.png" type="Texture" id=276]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_35.png" type="Texture" id=277]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_36.png" type="Texture" id=278]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_26.png" type="Texture" id=279]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_37.png" type="Texture" id=280]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_3.png" type="Texture" id=281]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_9.png" type="Texture" id=282]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_10.png" type="Texture" id=283]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_11.png" type="Texture" id=284]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_13.png" type="Texture" id=285]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_28.png" type="Texture" id=286]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_5.png" type="Texture" id=287]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_17.png" type="Texture" id=288]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_30.png" type="Texture" id=289]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_25.png" type="Texture" id=290]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_4.png" type="Texture" id=291]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_7.png" type="Texture" id=292]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_12.png" type="Texture" id=293]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_32.png" type="Texture" id=294]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_16.png" type="Texture" id=295]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_23.png" type="Texture" id=296]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_6.png" type="Texture" id=297]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_29.png" type="Texture" id=298]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_19.png" type="Texture" id=299]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_22.png" type="Texture" id=300]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_2.png" type="Texture" id=301]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_14.png" type="Texture" id=302]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_0.png" type="Texture" id=303]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_27.png" type="Texture" id=304]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_31.png" type="Texture" id=305]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_1.png" type="Texture" id=306]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_33.png" type="Texture" id=307]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_34.png" type="Texture" id=308]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_20.png" type="Texture" id=309]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_41.png" type="Texture" id=310]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_38.png" type="Texture" id=311]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_42.png" type="Texture" id=312]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_40.png" type="Texture" id=313]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_39.png" type="Texture" id=314]
+[ext_resource path="res://Objects/Player/sprites/idlevomit_43.png" type="Texture" id=315]
+[ext_resource path="res://Objects/Player/sprites/mach1_8.png" type="Texture" id=316]
+[ext_resource path="res://Objects/Player/sprites/mach1_11.png" type="Texture" id=317]
+[ext_resource path="res://Objects/Player/sprites/mach1_12.png" type="Texture" id=318]
+[ext_resource path="res://Objects/Player/sprites/mach1_15.png" type="Texture" id=319]
+[ext_resource path="res://Objects/Player/sprites/mach2jump_0.png" type="Texture" id=320]
+[ext_resource path="res://Objects/Player/sprites/mach4_0.png" type="Texture" id=321]
+[ext_resource path="res://Objects/Player/sprites/machfreefall_3.png" type="Texture" id=322]
+[ext_resource path="res://Objects/Player/sprites/mach_1.png" type="Texture" id=323]
+[ext_resource path="res://Objects/Player/sprites/mach_0.png" type="Texture" id=324]
+[ext_resource path="res://Objects/Player/sprites/mach1_9.png" type="Texture" id=325]
+[ext_resource path="res://Objects/Player/sprites/mach2jump_2.png" type="Texture" id=326]
+[ext_resource path="res://Objects/Player/sprites/mach1_1.png" type="Texture" id=327]
+[ext_resource path="res://Objects/Player/sprites/mach1_2.png" type="Texture" id=328]
+[ext_resource path="res://Objects/Player/sprites/mach_5.png" type="Texture" id=329]
+[ext_resource path="res://Objects/Player/sprites/mach_2.png" type="Texture" id=330]
+[ext_resource path="res://Objects/Player/sprites/mach1_3.png" type="Texture" id=331]
+[ext_resource path="res://Objects/Player/sprites/mach1_6.png" type="Texture" id=332]
+[ext_resource path="res://Objects/Player/sprites/mach1_10.png" type="Texture" id=333]
+[ext_resource path="res://Objects/Player/sprites/mach2jump_5.png" type="Texture" id=334]
+[ext_resource path="res://Objects/Player/sprites/mach3_0.png" type="Texture" id=335]
+[ext_resource path="res://Objects/Player/sprites/mach_6.png" type="Texture" id=336]
+[ext_resource path="res://Objects/Player/sprites/mach4_2.png" type="Texture" id=337]
+[ext_resource path="res://Objects/Player/sprites/machfreefall_0.png" type="Texture" id=338]
+[ext_resource path="res://Objects/Player/sprites/machfreefall_1.png" type="Texture" id=339]
+[ext_resource path="res://Objects/Player/sprites/mach_7.png" type="Texture" id=340]
+[ext_resource path="res://Objects/Player/sprites/mach1_0.png" type="Texture" id=341]
+[ext_resource path="res://Objects/Player/sprites/mach2jump_1.png" type="Texture" id=342]
+[ext_resource path="res://Objects/Player/sprites/mach1_4.png" type="Texture" id=343]
+[ext_resource path="res://Objects/Player/sprites/mach2jump_3.png" type="Texture" id=344]
+[ext_resource path="res://Objects/Player/sprites/mach2jump_4.png" type="Texture" id=345]
+[ext_resource path="res://Objects/Player/sprites/mach1_14.png" type="Texture" id=346]
+[ext_resource path="res://Objects/Player/sprites/mach3_3.png" type="Texture" id=347]
+[ext_resource path="res://Objects/Player/sprites/machfreefall_2.png" type="Texture" id=348]
+[ext_resource path="res://Objects/Player/sprites/machfreefall_4.png" type="Texture" id=349]
+[ext_resource path="res://Objects/Player/sprites/mach1_13.png" type="Texture" id=350]
+[ext_resource path="res://Objects/Player/sprites/machfreefall_5.png" type="Texture" id=351]
+[ext_resource path="res://Objects/Player/sprites/mach_3.png" type="Texture" id=352]
+[ext_resource path="res://Objects/Player/sprites/mach1_5.png" type="Texture" id=353]
+[ext_resource path="res://Objects/Player/sprites/mach3_1.png" type="Texture" id=354]
+[ext_resource path="res://Objects/Player/sprites/mach3_4.png" type="Texture" id=355]
+[ext_resource path="res://Objects/Player/sprites/mach3_5.png" type="Texture" id=356]
+[ext_resource path="res://Objects/Player/sprites/mach3_2.png" type="Texture" id=357]
+[ext_resource path="res://Objects/Player/sprites/mach4_1.png" type="Texture" id=358]
+[ext_resource path="res://Objects/Player/sprites/mach_4.png" type="Texture" id=359]
+[ext_resource path="res://Objects/Player/sprites/mach1_7.png" type="Texture" id=360]
+[ext_resource path="res://Objects/Player/sprites/machhit_0.png" type="Texture" id=361]
+[ext_resource path="res://Objects/Player/sprites/machpunch1_2.png" type="Texture" id=362]
+[ext_resource path="res://Objects/Player/sprites/machpunch1_3.png" type="Texture" id=363]
+[ext_resource path="res://Objects/Player/sprites/machpunch1_4.png" type="Texture" id=364]
+[ext_resource path="res://Objects/Player/sprites/machhit_3.png" type="Texture" id=365]
+[ext_resource path="res://Objects/Player/sprites/machhit_4.png" type="Texture" id=366]
+[ext_resource path="res://Objects/Player/sprites/machhit_5.png" type="Texture" id=367]
+[ext_resource path="res://Objects/Player/sprites/machhit_2.png" type="Texture" id=368]
+[ext_resource path="res://Objects/Player/sprites/machpunch1_0.png" type="Texture" id=369]
+[ext_resource path="res://Objects/Player/sprites/machpunch1_1.png" type="Texture" id=370]
+[ext_resource path="res://Objects/Player/sprites/machhit_1.png" type="Texture" id=371]
+[ext_resource path="res://Objects/Player/sprites/machpunch2_2.png" type="Texture" id=372]
+[ext_resource path="res://Objects/Player/sprites/machpunch2_3.png" type="Texture" id=373]
+[ext_resource path="res://Objects/Player/sprites/machroll_0.png" type="Texture" id=374]
+[ext_resource path="res://Objects/Player/sprites/machpunch2_0.png" type="Texture" id=375]
+[ext_resource path="res://Objects/Player/sprites/machpunch2_1.png" type="Texture" id=376]
+[ext_resource path="res://Objects/Player/sprites/machpunch2_4.png" type="Texture" id=377]
+[ext_resource path="res://Objects/Player/sprites/machroll_5.png" type="Texture" id=378]
+[ext_resource path="res://Objects/Player/sprites/running_1.png" type="Texture" id=379]
+[ext_resource path="res://Objects/Player/sprites/machslide_1.png" type="Texture" id=380]
+[ext_resource path="res://Objects/Player/sprites/running_7.png" type="Texture" id=381]
+[ext_resource path="res://Objects/Player/sprites/running_3.png" type="Texture" id=382]
+[ext_resource path="res://Objects/Player/sprites/machslidestart_2.png" type="Texture" id=383]
+[ext_resource path="res://Objects/Player/sprites/machslidestart_5.png" type="Texture" id=384]
+[ext_resource path="res://Objects/Player/sprites/machslide_0.png" type="Texture" id=385]
+[ext_resource path="res://Objects/Player/sprites/machslidestart_0.png" type="Texture" id=386]
+[ext_resource path="res://Objects/Player/sprites/running_2.png" type="Texture" id=387]
+[ext_resource path="res://Objects/Player/sprites/running_5.png" type="Texture" id=388]
+[ext_resource path="res://Objects/Player/sprites/machslidestart_4.png" type="Texture" id=389]
+[ext_resource path="res://Objects/Player/sprites/machslideend_0.png" type="Texture" id=390]
+[ext_resource path="res://Objects/Player/sprites/machroll_4.png" type="Texture" id=391]
+[ext_resource path="res://Objects/Player/sprites/machslideend_5.png" type="Texture" id=392]
+[ext_resource path="res://Objects/Player/sprites/machslideend_3.png" type="Texture" id=393]
+[ext_resource path="res://Objects/Player/sprites/machslidestart_6.png" type="Texture" id=394]
+[ext_resource path="res://Objects/Player/sprites/machslide_2.png" type="Texture" id=395]
+[ext_resource path="res://Objects/Player/sprites/machroll_1.png" type="Texture" id=396]
+[ext_resource path="res://Objects/Player/sprites/running_9.png" type="Texture" id=397]
+[ext_resource path="res://Objects/Player/sprites/machroll_3.png" type="Texture" id=398]
+[ext_resource path="res://Objects/Player/sprites/machslideend_2.png" type="Texture" id=399]
+[ext_resource path="res://Objects/Player/sprites/running_4.png" type="Texture" id=400]
+[ext_resource path="res://Objects/Player/sprites/machslideend_4.png" type="Texture" id=401]
+[ext_resource path="res://Objects/Player/sprites/running_0.png" type="Texture" id=402]
+[ext_resource path="res://Objects/Player/sprites/machslideend_1.png" type="Texture" id=403]
+[ext_resource path="res://Objects/Player/sprites/running_6.png" type="Texture" id=404]
+[ext_resource path="res://Objects/Player/sprites/running_8.png" type="Texture" id=405]
+[ext_resource path="res://Objects/Player/sprites/machslidestart_1.png" type="Texture" id=406]
+[ext_resource path="res://Objects/Player/sprites/machroll_2.png" type="Texture" id=407]
+[ext_resource path="res://Objects/Player/sprites/machslidestart_3.png" type="Texture" id=408]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 136 )
+shader_param/skip_first_row = false
+shader_param/use_palette_alpha = false
+shader_param/current_palette = 0
+shader_param/fps = 0.0
+shader_param/flash = false
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 104 ), ExtResource( 95 ), ExtResource( 92 ) ],
+"loop": true,
+"name": "fall",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 134 ), ExtResource( 109 ), ExtResource( 122 ) ],
+"loop": true,
+"name": "fall2",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 50 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 51 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 61 ), ExtResource( 63 ), ExtResource( 71 ), ExtResource( 60 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 62 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 72 ), ExtResource( 56 ), ExtResource( 66 ), ExtResource( 69 ), ExtResource( 36 ), ExtResource( 32 ), ExtResource( 37 ), ExtResource( 29 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 73 ), ExtResource( 18 ), ExtResource( 26 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "idle",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 141 ), ExtResource( 137 ), ExtResource( 147 ), ExtResource( 155 ), ExtResource( 138 ), ExtResource( 142 ), ExtResource( 151 ), ExtResource( 152 ), ExtResource( 139 ), ExtResource( 140 ), ExtResource( 150 ), ExtResource( 143 ), ExtResource( 144 ), ExtResource( 153 ), ExtResource( 149 ), ExtResource( 148 ), ExtResource( 145 ), ExtResource( 154 ), ExtResource( 146 ), ExtResource( 255 ), ExtResource( 252 ), ExtResource( 257 ), ExtResource( 258 ), ExtResource( 260 ), ExtResource( 253 ), ExtResource( 259 ), ExtResource( 254 ), ExtResource( 256 ), ExtResource( 261 ), ExtResource( 262 ), ExtResource( 263 ), ExtResource( 215 ), ExtResource( 183 ), ExtResource( 188 ), ExtResource( 184 ), ExtResource( 166 ), ExtResource( 211 ) ],
+"loop": true,
+"name": "idledance",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 199 ), ExtResource( 157 ), ExtResource( 201 ), ExtResource( 181 ), ExtResource( 164 ), ExtResource( 212 ), ExtResource( 163 ), ExtResource( 195 ), ExtResource( 160 ), ExtResource( 161 ), ExtResource( 179 ), ExtResource( 217 ), ExtResource( 216 ), ExtResource( 218 ), ExtResource( 182 ), ExtResource( 167 ), ExtResource( 200 ), ExtResource( 219 ), ExtResource( 165 ), ExtResource( 191 ), ExtResource( 209 ), ExtResource( 210 ), ExtResource( 180 ), ExtResource( 171 ), ExtResource( 205 ), ExtResource( 168 ), ExtResource( 187 ), ExtResource( 196 ), ExtResource( 202 ), ExtResource( 169 ), ExtResource( 176 ), ExtResource( 185 ), ExtResource( 186 ), ExtResource( 172 ), ExtResource( 203 ), ExtResource( 204 ), ExtResource( 158 ), ExtResource( 189 ) ],
+"loop": true,
+"name": "idlefrown",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 303 ), ExtResource( 306 ), ExtResource( 301 ), ExtResource( 281 ), ExtResource( 291 ), ExtResource( 287 ), ExtResource( 297 ), ExtResource( 292 ), ExtResource( 272 ), ExtResource( 282 ), ExtResource( 283 ), ExtResource( 284 ), ExtResource( 293 ), ExtResource( 285 ), ExtResource( 302 ), ExtResource( 273 ), ExtResource( 295 ), ExtResource( 288 ), ExtResource( 275 ), ExtResource( 299 ), ExtResource( 309 ), ExtResource( 274 ), ExtResource( 300 ), ExtResource( 296 ), ExtResource( 276 ), ExtResource( 290 ), ExtResource( 279 ), ExtResource( 304 ), ExtResource( 286 ), ExtResource( 298 ), ExtResource( 289 ), ExtResource( 305 ), ExtResource( 294 ), ExtResource( 307 ), ExtResource( 308 ), ExtResource( 277 ), ExtResource( 278 ), ExtResource( 280 ), ExtResource( 311 ), ExtResource( 314 ), ExtResource( 313 ), ExtResource( 310 ), ExtResource( 312 ), ExtResource( 315 ), ExtResource( 266 ), ExtResource( 270 ), ExtResource( 264 ), ExtResource( 265 ), ExtResource( 268 ), ExtResource( 269 ), ExtResource( 267 ), ExtResource( 271 ) ],
+"loop": true,
+"name": "idlevomit",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 194 ), ExtResource( 159 ), ExtResource( 177 ), ExtResource( 162 ), ExtResource( 170 ), ExtResource( 213 ), ExtResource( 173 ), ExtResource( 174 ), ExtResource( 156 ), ExtResource( 190 ), ExtResource( 197 ), ExtResource( 178 ), ExtResource( 192 ), ExtResource( 206 ), ExtResource( 175 ), ExtResource( 207 ), ExtResource( 193 ), ExtResource( 208 ), ExtResource( 198 ), ExtResource( 214 ), ExtResource( 220 ), ExtResource( 222 ), ExtResource( 224 ), ExtResource( 225 ), ExtResource( 221 ), ExtResource( 223 ), ExtResource( 231 ), ExtResource( 228 ), ExtResource( 251 ), ExtResource( 232 ), ExtResource( 246 ), ExtResource( 233 ), ExtResource( 226 ), ExtResource( 250 ), ExtResource( 234 ), ExtResource( 237 ), ExtResource( 235 ), ExtResource( 241 ), ExtResource( 236 ), ExtResource( 242 ), ExtResource( 238 ), ExtResource( 227 ), ExtResource( 243 ), ExtResource( 247 ), ExtResource( 239 ), ExtResource( 240 ), ExtResource( 245 ), ExtResource( 230 ), ExtResource( 244 ), ExtResource( 249 ), ExtResource( 248 ), ExtResource( 229 ) ],
+"loop": true,
+"name": "idlevomitblood",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 86 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 85 ), ExtResource( 87 ), ExtResource( 90 ), ExtResource( 96 ), ExtResource( 94 ), ExtResource( 106 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 93 ) ],
+"loop": true,
+"name": "jump",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 125 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 110 ), ExtResource( 126 ), ExtResource( 129 ), ExtResource( 114 ), ExtResource( 111 ), ExtResource( 120 ), ExtResource( 127 ), ExtResource( 121 ) ],
+"loop": true,
+"name": "jump2",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 100 ), ExtResource( 97 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 103 ), ExtResource( 102 ) ],
+"loop": true,
+"name": "land",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 128 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 132 ), ExtResource( 133 ) ],
+"loop": true,
+"name": "land2",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 324 ), ExtResource( 323 ), ExtResource( 330 ), ExtResource( 352 ), ExtResource( 359 ), ExtResource( 329 ), ExtResource( 336 ), ExtResource( 340 ) ],
+"loop": true,
+"name": "mach",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 341 ), ExtResource( 327 ), ExtResource( 328 ), ExtResource( 331 ), ExtResource( 343 ), ExtResource( 353 ), ExtResource( 332 ), ExtResource( 360 ), ExtResource( 316 ), ExtResource( 325 ), ExtResource( 333 ), ExtResource( 317 ), ExtResource( 318 ), ExtResource( 350 ), ExtResource( 346 ), ExtResource( 319 ) ],
+"loop": true,
+"name": "mach1",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 320 ), ExtResource( 342 ), ExtResource( 326 ), ExtResource( 344 ), ExtResource( 345 ), ExtResource( 334 ) ],
+"loop": true,
+"name": "mach2jump",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 335 ), ExtResource( 354 ), ExtResource( 357 ), ExtResource( 347 ), ExtResource( 355 ), ExtResource( 356 ) ],
+"loop": true,
+"name": "mach3",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 321 ), ExtResource( 358 ), ExtResource( 337 ) ],
+"loop": true,
+"name": "mach4",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 338 ), ExtResource( 339 ), ExtResource( 348 ), ExtResource( 322 ), ExtResource( 349 ), ExtResource( 351 ) ],
+"loop": true,
+"name": "machfreefall",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 361 ), ExtResource( 371 ), ExtResource( 368 ), ExtResource( 365 ), ExtResource( 366 ), ExtResource( 367 ) ],
+"loop": true,
+"name": "machhit",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 369 ), ExtResource( 370 ), ExtResource( 362 ), ExtResource( 363 ), ExtResource( 364 ) ],
+"loop": true,
+"name": "machpunch1",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 375 ), ExtResource( 376 ), ExtResource( 372 ), ExtResource( 373 ), ExtResource( 377 ) ],
+"loop": true,
+"name": "machpunch2",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 374 ), ExtResource( 396 ), ExtResource( 407 ), ExtResource( 398 ), ExtResource( 391 ), ExtResource( 378 ) ],
+"loop": true,
+"name": "machroll",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 385 ), ExtResource( 380 ), ExtResource( 395 ) ],
+"loop": true,
+"name": "machslide",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 390 ), ExtResource( 403 ), ExtResource( 399 ), ExtResource( 393 ), ExtResource( 401 ), ExtResource( 392 ) ],
+"loop": true,
+"name": "machslideend",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 386 ), ExtResource( 406 ), ExtResource( 383 ), ExtResource( 408 ), ExtResource( 389 ), ExtResource( 384 ), ExtResource( 394 ) ],
+"loop": true,
+"name": "machslidestart",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 105 ), ExtResource( 79 ), ExtResource( 74 ), ExtResource( 84 ), ExtResource( 75 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 78 ), ExtResource( 80 ), ExtResource( 76 ), ExtResource( 83 ), ExtResource( 77 ) ],
+"loop": true,
+"name": "move",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 113 ), ExtResource( 107 ), ExtResource( 115 ), ExtResource( 124 ), ExtResource( 108 ), ExtResource( 123 ), ExtResource( 112 ), ExtResource( 116 ) ],
+"loop": true,
+"name": "panic",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 402 ), ExtResource( 379 ), ExtResource( 387 ), ExtResource( 382 ), ExtResource( 400 ), ExtResource( 388 ), ExtResource( 404 ), ExtResource( 381 ), ExtResource( 405 ), ExtResource( 397 ) ],
+"loop": true,
+"name": "running",
+"speed": 60.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 27 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16, 11 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 24, 27 )
+
+[node name="obj_player" type="KinematicBody2D" groups=["obj_player"]]
+collision_mask = 6
+collision/safe_margin = 0.001
+moving_platform_apply_velocity_on_leave = 2
+script = ExtResource( 135 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+material = SubResource( 3 )
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 19 )
+shape = SubResource( 2 )
+
+[node name="CrouchCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 35 )
+shape = SubResource( 4 )
+
+[node name="CrouchCheck" type="RayCast2D" parent="."]
+position = Vector2( 0, 24 )
+cast_to = Vector2( 0, -32 )
+collision_mask = 2
+
+[node name="WallCheck" type="RayCast2D" parent="."]
+position = Vector2( 0, 16 )
+enabled = true
+cast_to = Vector2( 24, 0 )
+collision_mask = 2
+
+[node name="WallCheckTop" type="RayCast2D" parent="WallCheck"]
+position = Vector2( 0, -24 )
+enabled = true
+cast_to = Vector2( 24, 0 )
+collision_mask = 2
+
+[node name="WallCheckBottom" type="RayCast2D" parent="WallCheck"]
+position = Vector2( 0, 24 )
+enabled = true
+cast_to = Vector2( 24, 0 )
+collision_mask = 2
+
+[node name="BreakableArea" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape2D" parent="BreakableArea"]
+position = Vector2( 24, 19 )
+shape = SubResource( 5 )
+
+[node name="WhiteFlashTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="WhiteFlashTimer" to="." method="_on_WhiteFlashTimer_timeout"]
