@@ -60,10 +60,8 @@ func _process(delta):
 	$BreakableArea.scale.x = xscale
 	if crouchmask:
 		$Collision.set_deferred("disabled", true)
-		$CrouchCheck.enabled = true
 	else:
 		$Collision.set_deferred("disabled", false)
-		$CrouchCheck.enabled = false
 	if (input_buffer_jump < 8):
 		input_buffer_jump += 1
 	if (hurted):
@@ -144,6 +142,10 @@ func _process(delta):
 			scr_player_jump()
 		global.states.highjump:
 			scr_player_highjump()
+		global.states.crouch:
+			scr_player_crouch()
+		global.states.crouchjump:
+			scr_player_crouchjump()
 
 func _physics_process(delta):
 	var snap_vector = Vector2.ZERO
@@ -220,7 +222,7 @@ func scr_player_normal():
 		jumpstop = false
 		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_landcloud.tscn")
 		utils.playsound("Jump")
-	if ((Input.is_action_pressed("key_down") && is_on_floor()) || ($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("collision"))):
+	if ((Input.is_action_pressed("key_down") && is_on_floor()) || ($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("solid"))):
 		state = global.states.crouch
 		machslideAnim = true
 		landAnim = false
@@ -439,11 +441,100 @@ func scr_player_highjump():
 	if (move != 0):
 		xscale = move
 	$Sprite.speed_scale = 0.35
+	
+func scr_player_crouch():
+	var move = ((-int(Input.is_action_pressed("key_left"))) + int(Input.is_action_pressed("key_right")))
+	velocity.x = (move * movespeed)
+	crouchmask = true
+	if (is_colliding_with_wall()):
+		movespeed = 0
+	if (xscale == 1 && move == -1):
+		movespeed = 0
+	if (xscale == -1 && move == 1):
+		movespeed = 0
+	if (!is_on_floor() && !Input.is_action_just_pressed("key_jump")):
+		jumpAnim = false
+		state = global.states.crouchjump
+		movespeed = 4
+		crouchAnim = true
+	if (Input.is_action_just_pressed("key_jump") && is_on_floor() && !($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("solid"))):
+		velocity.y = -9.2
+		state = global.states.crouchjump
+		movespeed = 4
+		crouchAnim = true
+		jumpAnim = true
+		utils.playsound("Jump")
+	if (is_on_floor() && !Input.is_action_pressed("key_down") && !($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("solid")) && !Input.is_action_just_pressed("key_jump")):
+		state = global.states.normal
+		movespeed = 0
+		crouchAnim = true
+		jumpAnim = true
+		crouchmask = false
+	if (movespeed < 4):
+		movespeed += 0.5
+	elif (movespeed >= 4):
+		movespeed = 4
+	if (!crouchAnim):
+		if (move == 0):
+			$Sprite.animation = "crouch"
+		if (move != 0):
+			$Sprite.animation = "crawl"
+	if (crouchAnim):
+		$Sprite.animation = "crouchstart"
+		if ($Sprite.frame == 2):
+			crouchAnim = false
+	if (move != 0):
+		xscale = move
+		crouchAnim = false
+	$Sprite.speed_scale = 0.6
+	
+func scr_player_crouchjump():
+	var move = ((-int(Input.is_action_pressed("key_left"))) + int(Input.is_action_pressed("key_right")))
+	velocity.x = (move * movespeed)
+	crouchmask = true
+	if (xscale == 1 && move == -1):
+		movespeed = 0
+	if (xscale == -1 && move == 1):
+		movespeed = 0
+	if (movespeed < 4):
+		movespeed += 0.5
+	elif (movespeed >= 4):
+		movespeed = 4
+	if (!Input.is_action_pressed("key_jump") && !jumpstop && jumpAnim):
+		velocity.y /= 2
+		jumpstop = true
+	if (is_on_ceiling() && !jumpstop && jumpAnim):
+		velocity.y = grav
+		jumpstop = true
+	if (is_on_floor() && Input.is_action_pressed("key_down")):
+		state = global.states.crouch
+		jumpAnim = true
+		crouchAnim = true
+		jumpstop = false
+		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_landcloud.tscn")
+		utils.playsound("Land")
+	if (is_on_floor() && !Input.is_action_pressed("key_down") && !($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("solid")) && !Input.is_action_just_pressed("key_jump")):
+		state = global.states.normal
+		crouchAnim = true
+		landAnim = true
+		jumpAnim = true
+		jumpstop = false
+		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_landcloud.tscn")
+		crouchmask = false
+	if (jumpAnim):
+		$Sprite.animation = "crouchjump"
+		if ($Sprite.frame == 8):
+			jumpAnim = false
+	if (!jumpAnim):
+		$Sprite.animation = "crouchfall"
+	if (move != 0):
+		xscale = move
+	$Sprite.speed_scale = 0.35
 
 func scr_playersounds():
 	if ((state == global.states.normal || (state == global.states.grabbing && is_on_floor())) && velocity.x != 0 && !utils.soundplaying("Footsteps")):
 		utils.playsound("Footsteps")
-	if (state != global.states.normal && state != global.states.grabbing && utils.soundplaying("Footsteps")):
+	if (((state != global.states.normal && state != global.states.grabbing) || state == global.states.normal && velocity.x == 0) && utils.soundplaying("Footsteps")):
 		utils.stopsound("Footsteps")
 
 func _on_WhiteFlashTimer_timeout():
