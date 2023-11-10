@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Rooms/loadingroom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player/obj_player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sounds/sfx_footsteps.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/sfx_jump.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/sfx_land.wav" type="AudioStream" id=5]
 
 [node name="Game" type="Node2D"]
 
@@ -9,3 +12,15 @@
 
 [node name="obj_player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 192, 256 )
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Land" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"

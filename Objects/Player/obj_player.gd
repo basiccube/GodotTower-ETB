@@ -9,6 +9,7 @@ var xscale = 1
 var yscale = 1
 
 var movespeed = 0
+var mach2 = 0
 
 var targetLevel = ""
 var targetRoom = ""
@@ -135,13 +136,18 @@ func _process(delta):
 		crouchmask = false
 	else:
 		crouchmask = true
+	scr_playersounds()
 	match state:
 		global.states.normal:
 			scr_player_normal()
+		global.states.jump:
+			scr_player_jump()
+		global.states.highjump:
+			scr_player_highjump()
 
 func _physics_process(delta):
 	var snap_vector = Vector2.ZERO
-	if (!Input.is_action_just_pressed("key_jump") && (state != global.states.jump && state != global.states.Sjump && state != global.states.Sjumpprep && state != global.states.bump && state != global.states.crouchjump) && is_on_floor()):
+	if (!Input.is_action_just_pressed("key_jump") && (state != global.states.jump && state != global.states.highjump && state != global.states.Sjump && state != global.states.Sjumpprep && state != global.states.bump && state != global.states.crouchjump) && is_on_floor()):
 		snap_vector = Vector2.DOWN * 30
 	if (state != global.states.gameover):
 		if (state != global.states.Sjumpland && state != global.states.gottreasure && state != global.states.keyget && state != global.states.ladder):
@@ -302,11 +308,142 @@ func scr_player_normal():
 	if (movespeed == 9 && !dashdust):
 		dashdust = true
 		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_jumpdust.tscn")
+		
+func scr_player_jump():
+	var move = ((-int(Input.is_action_pressed("key_left"))) + int(Input.is_action_pressed("key_right")))
+	if (!momentum):
+		velocity.x = (move * movespeed)
+	else:
+		velocity.x = (xscale * movespeed)
+	if (move == 0 && !momentum):
+		movespeed = 0
+	if (move != 0 && movespeed < 6):
+		movespeed += 0.5
+	if (is_colliding_with_wall()):
+		movespeed = 0
+	if (xscale == 1 && move == -1):
+		mach2 = 0
+		movespeed = 0
+		momentum = false
+	if (xscale == -1 && move == 1):
+		mach2 = 0
+		movespeed = 0
+		momentum = false
+	if (Input.is_action_just_pressed("key_down")):
+		if (velocity.y < 0.5):
+			velocity.y /= 2
+		state = global.states.facestomp
+	landAnim = true
+	if (!Input.is_action_pressed("key_jump") && !jumpstop && velocity.y < 0.5 && !stompAnim):
+		velocity.y /= 2
+		jumpstop = true
+	if (ladderbuffer > 0):
+		ladderbuffer -= 1
+	if (is_on_ceiling() && !jumpstop && jumpAnim):
+		velocity.y = grav
+		jumpstop = true
+	if (is_on_floor() && velocity.y >= 0 && Input.is_action_pressed("key_dash") && momentum):
+		landAnim = false
+		state = global.states.mach1
+		jumpAnim = true
+		jumpstop = false
+		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_landcloud.tscn")
+		utils.playsound("Land")
+	if (is_on_floor() && velocity.y >= 0 && (!Input.is_action_pressed("key_dash") || !momentum)):
+		if (Input.is_action_pressed("key_dash")):
+			landAnim = false
+		state = global.states.normal
+		jumpAnim = true
+		jumpstop = false
+		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_landcloud.tscn")
+		utils.playsound("Land")
+	if (is_on_floor() && input_buffer_jump < 8 && !Input.is_action_pressed("key_down") && velocity.y >= 0):
+		stompAnim = false
+		velocity.y = -9
+		state = global.states.jump
+		jumpAnim = true
+		jumpstop = false
+		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_landcloud.tscn")
+		utils.playsound("Jump")
+	if (Input.is_action_just_pressed("key_jump")):
+		input_buffer_jump = 0
+	if (!stompAnim):
+		if (jumpAnim):
+			if (momentum):
+				$Sprite.animation = "jump2"
+			else:
+				$Sprite.animation = "jump"
+			if ($Sprite.frame == 8):
+				jumpAnim = false
+		if (!jumpAnim):
+			if (momentum):
+				$Sprite.animation = "fall2"
+			else:
+				$Sprite.animation = "fall"
+	if (stompAnim):
+		if ($Sprite.animation == "stompprep" && $Sprite.frame == 4):
+			$Sprite.animation = "stomp"
+	if (move != 0):
+		xscale = move
+	$Sprite.speed_scale = 0.35
+	
+func scr_player_highjump():
+	var move = ((-int(Input.is_action_pressed("key_left"))) + int(Input.is_action_pressed("key_right")))
+	velocity.x = (move * movespeed)
+	if (move == 0):
+		movespeed = 0
+	if (move != 0 && movespeed < 5):
+		movespeed += 0.5
+	if (is_colliding_with_wall()):
+		movespeed = 0
+	if (xscale == 1 && move == -1):
+		movespeed = 0
+	if (xscale == -1 && move == 1):
+		movespeed = 0
+	if (Input.is_action_just_pressed("key_down")):
+		if (velocity.y < 0.5):
+			velocity.y /= 2
+		state = global.states.facestomp
+	landAnim = true
+	if (!Input.is_action_pressed("key_jump") && !jumpstop && velocity.y < 0.5 && !stompAnim):
+		velocity.y /= 2
+		jumpstop = true
+	if (ladderbuffer > 0):
+		ladderbuffer -= 1
+	if (is_on_ceiling() && !jumpstop && jumpAnim):
+		velocity.y = grav
+		jumpstop = true
+	if (is_on_floor() && velocity.y >= 0):
+		if (Input.is_action_pressed("key_dash")):
+			landAnim = false
+		state = global.states.normal
+		jumpAnim = true
+		jumpstop = false
+		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_landcloud.tscn")
+		utils.playsound("Land")
+	if (is_on_floor() && input_buffer_jump < 8 && !Input.is_action_pressed("key_down") && velocity.y >= 0):
+		velocity.y = -9
+		state = global.states.jump
+		jumpAnim = true
+		jumpstop = false
+		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_landcloud.tscn")
+		utils.playsound("Jump")
+	if (Input.is_action_just_pressed("key_jump")):
+		input_buffer_jump = 0
+	if (jumpAnim):
+		$Sprite.animation = "Sjumpstart"
+		if ($Sprite.frame == 3):
+			jumpAnim = false
+	if (!jumpAnim):
+		$Sprite.animation = "Sjump"
+	if (move != 0):
+		xscale = move
+	$Sprite.speed_scale = 0.35
 
 func scr_playersounds():
 	if ((state == global.states.normal || (state == global.states.grabbing && is_on_floor())) && velocity.x != 0 && !utils.soundplaying("Footsteps")):
 		utils.playsound("Footsteps")
-	if (state != global.states.normal && state != global.states.grabbing):
+	if (state != global.states.normal && state != global.states.grabbing && utils.soundplaying("Footsteps")):
 		utils.stopsound("Footsteps")
 
 func _on_WhiteFlashTimer_timeout():
