@@ -44,6 +44,7 @@ enum states {
 	gameover,
 	gottreasure,
 	grab,
+	grabbing,
 	hurt,
 	highjump,
 	keyget,

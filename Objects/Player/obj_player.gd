@@ -22,6 +22,7 @@ var jumpstop = false
 
 var jumpAnim = true
 var landAnim = false
+var crouchAnim = false
 var machslideAnim = true
 var machhitAnim = false
 var machpunchAnim = false
@@ -174,6 +175,10 @@ func set_animation(anim: String):
 func scr_player_normal():
 	var move = ((-int(Input.is_action_pressed("key_left"))) + int(Input.is_action_pressed("key_right")))
 	velocity.x = (move * movespeed)
+	if (Input.is_action_pressed("key_dash") && is_on_floor() && !is_colliding_with_wall()):
+		jumpAnim = true
+		state = global.states.mach1
+		movespeed = 0
 	if (is_colliding_with_wall() && move != 0):
 		movespeed = 0
 	jumpstop = false
@@ -185,6 +190,36 @@ func scr_player_normal():
 		machslideAnim = true
 		landAnim = false
 		movespeed = 0
+	if (!is_on_floor() && !Input.is_action_just_pressed("key_jump")):
+		jumpAnim = false
+		state = global.states.jump
+		machslideAnim = true
+	if (Input.is_action_just_pressed("key_jump") && is_on_floor() && Input.is_action_pressed("key_up") && !Input.is_action_pressed("key_down") && !Input.is_action_pressed("key_dash") && move == 0):
+		velocity.y = -12
+		state = global.states.highjump
+		machslideAnim = true
+		jumpAnim = true
+		utils.playsound("Jump")
+	if (Input.is_action_just_pressed("key_jump") && is_on_floor() && !Input.is_action_pressed("key_down") && $Sprite.animation != "Sjumpprep" && input_buffer_jump >= 8):
+		velocity.y = -9
+		state = global.states.jump
+		machslideAnim = true
+		jumpAnim = true
+		utils.playsound("Jump")
+	if (is_on_floor() && input_buffer_jump < 8 && !Input.is_action_pressed("key_down") && velocity.y >= 0):
+		stompAnim = false
+		velocity.y = -9
+		state = global.states.jump
+		jumpAnim = true
+		jumpstop = false
+		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_landcloud.tscn")
+		utils.playsound("Jump")
+	if ((Input.is_action_pressed("key_down") && is_on_floor()) || ($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("collision"))):
+		state = global.states.crouch
+		machslideAnim = true
+		landAnim = false
+		crouchAnim = true
+		idle = 0
 	if (move != 0):
 		if (movespeed < 6 && $Sprite.animation != "running"):
 			movespeed += 0.5
@@ -198,6 +233,11 @@ func scr_player_normal():
 		movespeed = 0
 	if (movespeed > 6):
 		movespeed -= 0.1
+	if (Input.is_action_pressed("key_up") && move == 0):
+		landAnim = false
+		$Sprite.animation = "Sjumpprep"
+		if ($Sprite.frame == 5):
+			$Sprite.speed_scale = 0
 	if (!(Input.is_action_pressed("key_up") && move == 0)):
 		if (machslideAnim && !landAnim):
 			if (move == 0):
@@ -262,6 +302,12 @@ func scr_player_normal():
 	if (movespeed == 9 && !dashdust):
 		dashdust = true
 		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_jumpdust.tscn")
+
+func scr_playersounds():
+	if ((state == global.states.normal || (state == global.states.grabbing && is_on_floor())) && velocity.x != 0 && !utils.soundplaying("Footsteps")):
+		utils.playsound("Footsteps")
+	if (state != global.states.normal && state != global.states.grabbing):
+		utils.stopsound("Footsteps")
 
 func _on_WhiteFlashTimer_timeout():
 	flash = false
