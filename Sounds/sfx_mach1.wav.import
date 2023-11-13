@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_mach1.wav-4b5f3def3ceca18829502cb0d39a47eb.sample"
+
+[deps]
+
+source_file="res://Sounds/sfx_mach1.wav"
+dest_files=[ "res://.import/sfx_mach1.wav-4b5f3def3ceca18829502cb0d39a47eb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

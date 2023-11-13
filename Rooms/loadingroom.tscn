@@ -13,14 +13,15 @@ position = Vector2( 0, 416 )
 scale = Vector2( 30, 4 )
 
 [node name="obj_wall2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 896, 0 )
-scale = Vector2( 2, 13 )
+position = Vector2( 896, -192 )
+scale = Vector2( 2, 19 )
 
 [node name="obj_wall3" parent="." instance=ExtResource( 2 )]
-scale = Vector2( 2, 13 )
+position = Vector2( 0, -192 )
+scale = Vector2( 2, 19 )
 
 [node name="obj_wall4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 64, 0 )
+position = Vector2( 64, -192 )
 scale = Vector2( 26, 2 )
 
 [node name="obj_wall5" parent="." instance=ExtResource( 2 )]
@@ -37,4 +38,16 @@ scale = Vector2( -2, 2 )
 
 [node name="obj_platform" parent="." instance=ExtResource( 4 )]
 position = Vector2( 384, 256 )
+scale = Vector2( 3, 1 )
+
+[node name="obj_platform2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512, 160 )
+scale = Vector2( 3, 1 )
+
+[node name="obj_platform3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 64 )
+scale = Vector2( 3, 1 )
+
+[node name="obj_platform4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 736, 0 )
 scale = Vector2( 3, 1 )

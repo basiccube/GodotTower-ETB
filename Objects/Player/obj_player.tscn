@@ -1,4 +1,4 @@
-[gd_scene load_steps=510 format=2]
+[gd_scene load_steps=546 format=2]
 
 [ext_resource path="res://Objects/Player/sprites/idle_49.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Player/sprites/idle_50.png" type="Texture" id=2]
@@ -504,6 +504,42 @@
 [ext_resource path="res://Objects/Player/sprites/crouchslide_2.png" type="Texture" id=502]
 [ext_resource path="res://Objects/Player/sprites/crouchslidestart_4.png" type="Texture" id=503]
 [ext_resource path="res://Objects/Player/sprites/crouchslide_1.png" type="Texture" id=504]
+[ext_resource path="res://Objects/Player/sprites/freefallland_1.png" type="Texture" id=505]
+[ext_resource path="res://Objects/Player/sprites/freefallland_19.png" type="Texture" id=506]
+[ext_resource path="res://Objects/Player/sprites/freefallland_4.png" type="Texture" id=507]
+[ext_resource path="res://Objects/Player/sprites/freefallland_21.png" type="Texture" id=508]
+[ext_resource path="res://Objects/Player/sprites/freefallland_23.png" type="Texture" id=509]
+[ext_resource path="res://Objects/Player/sprites/freefallland_12.png" type="Texture" id=510]
+[ext_resource path="res://Objects/Player/sprites/freefallland_18.png" type="Texture" id=511]
+[ext_resource path="res://Objects/Player/sprites/freefallland_8.png" type="Texture" id=512]
+[ext_resource path="res://Objects/Player/sprites/freefallland_11.png" type="Texture" id=513]
+[ext_resource path="res://Objects/Player/sprites/facestomphit_4.png" type="Texture" id=514]
+[ext_resource path="res://Objects/Player/sprites/freefallland_7.png" type="Texture" id=515]
+[ext_resource path="res://Objects/Player/sprites/facestomphit_3.png" type="Texture" id=516]
+[ext_resource path="res://Objects/Player/sprites/freefall_0.png" type="Texture" id=517]
+[ext_resource path="res://Objects/Player/sprites/freefallland_20.png" type="Texture" id=518]
+[ext_resource path="res://Objects/Player/sprites/freefallland_15.png" type="Texture" id=519]
+[ext_resource path="res://Objects/Player/sprites/freefallland_16.png" type="Texture" id=520]
+[ext_resource path="res://Objects/Player/sprites/freefallland_17.png" type="Texture" id=521]
+[ext_resource path="res://Objects/Player/sprites/facestomphit_5.png" type="Texture" id=522]
+[ext_resource path="res://Objects/Player/sprites/freefallland_22.png" type="Texture" id=523]
+[ext_resource path="res://Objects/Player/sprites/freefallland_9.png" type="Texture" id=524]
+[ext_resource path="res://Objects/Player/sprites/freefallland_14.png" type="Texture" id=525]
+[ext_resource path="res://Objects/Player/sprites/freefallland_0.png" type="Texture" id=526]
+[ext_resource path="res://Objects/Player/sprites/freefall_2.png" type="Texture" id=527]
+[ext_resource path="res://Objects/Player/sprites/freefall_1.png" type="Texture" id=528]
+[ext_resource path="res://Objects/Player/sprites/freefallland_3.png" type="Texture" id=529]
+[ext_resource path="res://Objects/Player/sprites/freefallland_5.png" type="Texture" id=530]
+[ext_resource path="res://Objects/Player/sprites/freefallland_6.png" type="Texture" id=531]
+[ext_resource path="res://Objects/Player/sprites/facestomphit_2.png" type="Texture" id=532]
+[ext_resource path="res://Objects/Player/sprites/freefallland_2.png" type="Texture" id=533]
+[ext_resource path="res://Objects/Player/sprites/freefallland_10.png" type="Texture" id=534]
+[ext_resource path="res://Objects/Player/sprites/freefallland_13.png" type="Texture" id=535]
+[ext_resource path="res://Objects/Player/sprites/facestomphit_1.png" type="Texture" id=536]
+[ext_resource path="res://Objects/Player/sprites/facestomp_2.png" type="Texture" id=537]
+[ext_resource path="res://Objects/Player/sprites/facestomphit_0.png" type="Texture" id=538]
+[ext_resource path="res://Objects/Player/sprites/facestomp_0.png" type="Texture" id=539]
+[ext_resource path="res://Objects/Player/sprites/facestomp_1.png" type="Texture" id=540]
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 136 )
@@ -570,6 +606,16 @@ animations = [ {
 "name": "crouchstart",
 "speed": 60.0
 }, {
+"frames": [ ExtResource( 539 ), ExtResource( 540 ), ExtResource( 537 ) ],
+"loop": true,
+"name": "facestomp",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 538 ), ExtResource( 536 ), ExtResource( 532 ), ExtResource( 516 ), ExtResource( 514 ), ExtResource( 522 ) ],
+"loop": true,
+"name": "facestomphit",
+"speed": 60.0
+}, {
 "frames": [ ExtResource( 104 ), ExtResource( 95 ), ExtResource( 92 ) ],
 "loop": true,
 "name": "fall",
@@ -578,6 +624,16 @@ animations = [ {
 "frames": [ ExtResource( 134 ), ExtResource( 109 ), ExtResource( 122 ) ],
 "loop": true,
 "name": "fall2",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 517 ), ExtResource( 528 ), ExtResource( 527 ) ],
+"loop": true,
+"name": "freefall",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 526 ), ExtResource( 505 ), ExtResource( 533 ), ExtResource( 529 ), ExtResource( 507 ), ExtResource( 530 ), ExtResource( 531 ), ExtResource( 515 ), ExtResource( 512 ), ExtResource( 524 ), ExtResource( 534 ), ExtResource( 513 ), ExtResource( 510 ), ExtResource( 535 ), ExtResource( 525 ), ExtResource( 519 ), ExtResource( 520 ), ExtResource( 521 ), ExtResource( 511 ), ExtResource( 506 ), ExtResource( 518 ), ExtResource( 508 ), ExtResource( 523 ), ExtResource( 509 ) ],
+"loop": true,
+"name": "freefallland",
 "speed": 60.0
 }, {
 "frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 50 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 51 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 61 ), ExtResource( 63 ), ExtResource( 71 ), ExtResource( 60 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 62 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 72 ), ExtResource( 56 ), ExtResource( 66 ), ExtResource( 69 ), ExtResource( 36 ), ExtResource( 32 ), ExtResource( 37 ), ExtResource( 29 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 73 ), ExtResource( 18 ), ExtResource( 26 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 23 ) ],
