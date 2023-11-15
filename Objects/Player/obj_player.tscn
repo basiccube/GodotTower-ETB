@@ -1,4 +1,4 @@
-[gd_scene load_steps=546 format=2]
+[gd_scene load_steps=561 format=2]
 
 [ext_resource path="res://Objects/Player/sprites/idle_49.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Player/sprites/idle_50.png" type="Texture" id=2]
@@ -540,6 +540,21 @@
 [ext_resource path="res://Objects/Player/sprites/facestomphit_0.png" type="Texture" id=538]
 [ext_resource path="res://Objects/Player/sprites/facestomp_0.png" type="Texture" id=539]
 [ext_resource path="res://Objects/Player/sprites/facestomp_1.png" type="Texture" id=540]
+[ext_resource path="res://Objects/Player/sprites/bump_0.png" type="Texture" id=541]
+[ext_resource path="res://Objects/Player/sprites/bump_1.png" type="Texture" id=542]
+[ext_resource path="res://Objects/Player/sprites/bump_2.png" type="Texture" id=543]
+[ext_resource path="res://Objects/Player/sprites/bump_3.png" type="Texture" id=544]
+[ext_resource path="res://Objects/Player/sprites/bump_4.png" type="Texture" id=545]
+[ext_resource path="res://Objects/Player/sprites/bump_7.png" type="Texture" id=546]
+[ext_resource path="res://Objects/Player/sprites/bump_11.png" type="Texture" id=547]
+[ext_resource path="res://Objects/Player/sprites/bump_12.png" type="Texture" id=548]
+[ext_resource path="res://Objects/Player/sprites/bump_5.png" type="Texture" id=549]
+[ext_resource path="res://Objects/Player/sprites/bump_9.png" type="Texture" id=550]
+[ext_resource path="res://Objects/Player/sprites/bump_14.png" type="Texture" id=551]
+[ext_resource path="res://Objects/Player/sprites/bump_6.png" type="Texture" id=552]
+[ext_resource path="res://Objects/Player/sprites/bump_10.png" type="Texture" id=553]
+[ext_resource path="res://Objects/Player/sprites/bump_8.png" type="Texture" id=554]
+[ext_resource path="res://Objects/Player/sprites/bump_13.png" type="Texture" id=555]
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 136 )
@@ -564,6 +579,11 @@ animations = [ {
 "frames": [ ExtResource( 410 ), ExtResource( 413 ), ExtResource( 418 ), ExtResource( 411 ) ],
 "loop": true,
 "name": "Sjumpstart",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 541 ), ExtResource( 542 ), ExtResource( 543 ), ExtResource( 544 ), ExtResource( 545 ), ExtResource( 549 ), ExtResource( 552 ), ExtResource( 546 ), ExtResource( 554 ), ExtResource( 550 ), ExtResource( 553 ), ExtResource( 547 ), ExtResource( 548 ), ExtResource( 555 ), ExtResource( 551 ) ],
+"loop": true,
+"name": "bump",
 "speed": 60.0
 }, {
 "frames": [ ExtResource( 488 ), ExtResource( 447 ), ExtResource( 445 ), ExtResource( 444 ), ExtResource( 493 ), ExtResource( 490 ), ExtResource( 446 ), ExtResource( 448 ), ExtResource( 486 ), ExtResource( 462 ), ExtResource( 456 ), ExtResource( 473 ), ExtResource( 459 ), ExtResource( 457 ), ExtResource( 463 ), ExtResource( 491 ) ],
@@ -787,6 +807,7 @@ extents = Vector2( 16, 11 )
 extents = Vector2( 24, 27 )
 
 [node name="obj_player" type="KinematicBody2D" groups=["obj_player"]]
+z_index = 10
 collision_mask = 6
 collision/safe_margin = 0.001
 moving_platform_apply_velocity_on_leave = 2
@@ -795,7 +816,7 @@ script = ExtResource( 135 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 material = SubResource( 3 )
 frames = SubResource( 1 )
-animation = "idle"
+animation = "bump"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 19 )
@@ -824,7 +845,7 @@ cast_to = Vector2( 24, 0 )
 collision_mask = 2
 
 [node name="WallCheckBottom" type="RayCast2D" parent="WallCheck"]
-position = Vector2( 0, 24 )
+position = Vector2( 0, 20 )
 enabled = true
 cast_to = Vector2( 24, 0 )
 collision_mask = 2

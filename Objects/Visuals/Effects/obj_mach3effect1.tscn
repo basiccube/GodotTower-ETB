@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Objects/Player/sprites/mach_0.png" type="Texture" id=1]
-[ext_resource path="res://Objects/Visuals/Effects/obj_mach3effect.gd" type="Script" id=2]
+[ext_resource path="res://Objects/Visuals/Effects/obj_mach3effect1.gd" type="Script" id=2]
 
-[node name="obj_mach3effect" type="Node2D" groups=["obj_mach3effect"]]
+[node name="obj_mach3effect1" type="Node2D" groups=["obj_mach3effect1"]]
 z_index = 8
 script = ExtResource( 2 )
 
@@ -15,11 +15,11 @@ wait_time = 0.25
 one_shot = true
 
 [node name="AlphaOffTimer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.033
 one_shot = true
 
 [node name="AlphaOnTimer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.033
 one_shot = true
 
 [connection signal="timeout" from="DestroyTimer" to="." method="_on_DestroyTimer_timeout"]
