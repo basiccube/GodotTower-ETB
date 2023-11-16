@@ -7,14 +7,18 @@ func _ready():
 	scale.x = utils.get_player().xscale
 	randomize()
 	var randcolor = utils.randi_range(0, 2)
-	if randcolor == 0:
-		modulate.r = 0
-	elif randcolor == 1:
-		modulate.r = 0.39
-	elif randcolor == 2:
-		modulate.r = 0.78
-	modulate.g = 1
-	modulate.b = 1
+	if (randcolor == 0):
+		modulate.r = 1
+		modulate.g = 0
+		modulate.b = 0
+	elif (randcolor == 1):
+		modulate.r = 0.33
+		modulate.g = 1
+		modulate.b = 0
+	elif (randcolor == 2):
+		modulate.r = 0.25
+		modulate.g = 0.33
+		modulate.b = 1
 	$AlphaOffTimer.start()
 	
 func _process(delta):

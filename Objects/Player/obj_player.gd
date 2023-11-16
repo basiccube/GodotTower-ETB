@@ -135,6 +135,7 @@ func _process(delta):
 		toomuchalarm1 -= 1
 		if (toomuchalarm1 <= 0 && (state == global.states.mach3 || state == global.states.machroll || state == global.states.Sjump || state == global.states.machfreefall)):
 			utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_mach3effect.tscn")
+			utils.instance_create(position.x - (75 * xscale), position.y, "res://Objects/Visuals/Effects/obj_mach3effect.tscn")
 			toomuchalarm1 = 6
 	if (state != global.states.bump && state != global.states.crouch && state != global.states.machroll && state != global.states.hurt && state != global.states.crouchslide && state != global.states.crouchjump):
 		crouchmask = false

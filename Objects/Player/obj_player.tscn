@@ -816,7 +816,7 @@ script = ExtResource( 135 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 material = SubResource( 3 )
 frames = SubResource( 1 )
-animation = "bump"
+animation = "idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 19 )
