@@ -12,6 +12,9 @@ func _process(delta):
 		timestop = true
 	if (global.targetRoom == "timesuproom"):
 		timestop = true
+	if (global.minutes == 0 && global.seconds == 0 && global.targetRoom != "timesuproom"):
+		utils.get_player().state = global.states.timesup
+		utils.room_goto("", "timesuproom")
 	if (global.seconds < 0):
 		global.seconds = 59
 		global.minutes -= 1
@@ -19,8 +22,8 @@ func _process(delta):
 		global.minutes += 1
 		global.seconds -= 59
 	if (global.panic && global.minutes > 1):
-		shake_mag = 2
-		shake_mag_acc = (3 / 10)
+		shake_mag = 3
+		shake_mag_acc = (5 / 10)
 	elif (global.panic && global.minutes <= 1):
 		shake_mag = 4
 		shake_mag_acc = (6 / 10)
@@ -40,7 +43,25 @@ func _process(delta):
 	global_position.y = clamp(global_position.y, (limit_top + 270), (limit_bottom - 270))
 	if (shake_mag != 0):
 		global_position.y = clamp(global_position.y, (limit_top + 270 + utils.randi_range((-shake_mag), shake_mag)), (limit_bottom - 270 + utils.randi_range((-shake_mag), shake_mag)))
-
+	# Draw code
+	$Collect.text = str(global.collect)
+	if (!timestop):
+		$TimeText.visible = true
+		if (global.seconds < 10):
+			if (global.minutes < 1):
+				$TimeText.add_color_override("font_color", Color(1,0,0))
+			else:
+				$TimeText.add_color_override("font_color", Color(1,1,1))
+			$TimeText.text = str(global.minutes) + ":0" + str(global.seconds)
+		elif (global.seconds >= 10):
+			if (global.minutes < 1):
+				$TimeText.add_color_override("font_color", Color(1,0,0))
+			else:
+				$TimeText.add_color_override("font_color", Color(1,1,1))
+			$TimeText.text = str(global.minutes) + ":" + str(global.seconds)
+	else:
+		$TimeText.visible = false
+	
 func _on_Timer_timeout():
 	if (!timestop):
 		global.seconds -= 1

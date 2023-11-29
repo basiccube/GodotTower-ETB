@@ -7,8 +7,9 @@ var targetLevel = ""
 var targetRoom = ""
 var targetDoor = "A"
 
-var minutes = 0
-var seconds = 59
+var minutes = 3
+var seconds = 40
+var lapping = false
 
 var collect = 0
 var shroomfollow = false
@@ -50,6 +51,7 @@ enum states {
 	keyget,
 	knightpep,
 	knightpepattack,
+	bombpep,
 	ladder,
 	Sjump,
 	Sjumpprep,

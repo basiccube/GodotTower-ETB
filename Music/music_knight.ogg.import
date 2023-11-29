@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/music_knight.ogg-f57095d6a2c1f0876052248af9db26df.oggstr"
+
+[deps]
+
+source_file="res://Music/music_knight.ogg"
+dest_files=[ "res://.import/music_knight.ogg-f57095d6a2c1f0876052248af9db26df.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

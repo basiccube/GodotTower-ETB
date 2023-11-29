@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Collision/obj_wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Collision/obj_slope.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Collision/obj_platform.tscn" type="PackedScene" id=4]
+
+[node name="test_room" type="Node2D"]
+
+[node name="obj_wall" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 416 )
+scale = Vector2( 94, 4 )
+
+[node name="obj_wall2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2944, -192 )
+scale = Vector2( 2, 19 )
+
+[node name="obj_wall3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -192 )
+scale = Vector2( 2, 19 )
+
+[node name="obj_wall4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 64, -192 )
+scale = Vector2( 90, 2 )
+
+[node name="obj_wall5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 544, 352 )
+scale = Vector2( 5, 2 )
+
+[node name="obj_slope" parent="." instance=ExtResource( 3 )]
+position = Vector2( 480, 352 )
+scale = Vector2( 2, 2 )
+
+[node name="obj_slope2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 768, 352 )
+scale = Vector2( -2, 2 )
+
+[node name="obj_platform" parent="." instance=ExtResource( 4 )]
+position = Vector2( 384, 256 )
+scale = Vector2( 3, 1 )
+
+[node name="obj_platform2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512, 160 )
+scale = Vector2( 3, 1 )
+
+[node name="obj_platform3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 64 )
+scale = Vector2( 3, 1 )
+
+[node name="obj_platform4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 736, 0 )
+scale = Vector2( 3, 1 )

@@ -151,7 +151,6 @@ func _process(delta):
 		|| state == global.states.Sjump
 		|| state == global.states.machfreefall)):
 			utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_mach3effect.tscn")
-			utils.instance_create(position.x - (75 * xscale), position.y, "res://Objects/Visuals/Effects/obj_mach3effect.tscn")
 			toomuchalarm1 = 6
 	if (state != global.states.bump
 	&& state != global.states.crouch

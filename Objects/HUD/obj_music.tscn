@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Objects/HUD/obj_music.gd" type="Script" id=1]
+
+[node name="obj_music" type="Node2D" groups=["obj_music"]]
+script = ExtResource( 1 )
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+bus = "Music"
+
+[node name="knightmusic" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+bus = "Music"
+
+[node name="scarymusic" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+bus = "Music"
+
+[node name="bombmusic" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+bus = "Music"
+
+[node name="victorymusic" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+bus = "Music"
+
+[node name="timesupmusic" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+bus = "Music"
+
+[node name="RestartMusicTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/music_onepizzaatatime.ogg-903cf42d204e36a98a97b4460120577e.oggstr"
+
+[deps]
+
+source_file="res://Music/music_onepizzaatatime.ogg"
+dest_files=[ "res://.import/music_onepizzaatatime.ogg-903cf42d204e36a98a97b4460120577e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
