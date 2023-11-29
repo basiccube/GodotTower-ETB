@@ -1,4 +1,4 @@
-[gd_scene load_steps=561 format=2]
+[gd_scene load_steps=578 format=2]
 
 [ext_resource path="res://Objects/Player/sprites/idle_49.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Player/sprites/idle_50.png" type="Texture" id=2]
@@ -555,6 +555,23 @@
 [ext_resource path="res://Objects/Player/sprites/bump_10.png" type="Texture" id=553]
 [ext_resource path="res://Objects/Player/sprites/bump_8.png" type="Texture" id=554]
 [ext_resource path="res://Objects/Player/sprites/bump_13.png" type="Texture" id=555]
+[ext_resource path="res://Objects/Player/sprites/superjumpland_1.png" type="Texture" id=556]
+[ext_resource path="res://Objects/Player/sprites/superjumpland_4.png" type="Texture" id=557]
+[ext_resource path="res://Objects/Player/sprites/superjumpland_5.png" type="Texture" id=558]
+[ext_resource path="res://Objects/Player/sprites/superjumpland_6.png" type="Texture" id=559]
+[ext_resource path="res://Objects/Player/sprites/superjumpland_3.png" type="Texture" id=561]
+[ext_resource path="res://Objects/Player/sprites/superjumpprep_6.png" type="Texture" id=563]
+[ext_resource path="res://Objects/Player/sprites/superjumpprep_4.png" type="Texture" id=565]
+[ext_resource path="res://Objects/Player/sprites/superjump_2.png" type="Texture" id=566]
+[ext_resource path="res://Objects/Player/sprites/superjumpland_2.png" type="Texture" id=567]
+[ext_resource path="res://Objects/Player/sprites/superjumpprep_0.png" type="Texture" id=573]
+[ext_resource path="res://Objects/Player/sprites/superjump_1.png" type="Texture" id=583]
+[ext_resource path="res://Objects/Player/sprites/superjumpprep_1.png" type="Texture" id=584]
+[ext_resource path="res://Objects/Player/sprites/superjumpland_0.png" type="Texture" id=585]
+[ext_resource path="res://Objects/Player/sprites/superjumpprep_2.png" type="Texture" id=586]
+[ext_resource path="res://Objects/Player/sprites/superjumpprep_3.png" type="Texture" id=587]
+[ext_resource path="res://Objects/Player/sprites/superjumpprep_5.png" type="Texture" id=588]
+[ext_resource path="res://Objects/Player/sprites/superjump_0.png" type="Texture" id=589]
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 136 )
@@ -789,6 +806,21 @@ animations = [ {
 "frames": [ ExtResource( 436 ), ExtResource( 440 ), ExtResource( 437 ), ExtResource( 441 ), ExtResource( 434 ) ],
 "loop": true,
 "name": "stompprep",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 589 ), ExtResource( 583 ), ExtResource( 566 ) ],
+"loop": true,
+"name": "superjump",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 585 ), ExtResource( 556 ), ExtResource( 567 ), ExtResource( 561 ), ExtResource( 557 ), ExtResource( 558 ), ExtResource( 559 ) ],
+"loop": true,
+"name": "superjumpland",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 573 ), ExtResource( 584 ), ExtResource( 586 ), ExtResource( 587 ), ExtResource( 565 ), ExtResource( 588 ), ExtResource( 563 ) ],
+"loop": true,
+"name": "superjumpprep",
 "speed": 60.0
 }, {
 "frames": [ ExtResource( 425 ), ExtResource( 430 ), ExtResource( 432 ), ExtResource( 433 ), ExtResource( 431 ), ExtResource( 426 ), ExtResource( 427 ), ExtResource( 428 ), ExtResource( 429 ), ExtResource( 439 ) ],

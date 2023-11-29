@@ -112,13 +112,22 @@ func _process(delta):
 		momentum = false
 	if (movespeed < 8):
 		dashdust = false
-	if (state != global.states.grab && state != global.states.throw && state != global.states.shoulder && state != global.states.punch && state != global.states.backkick && state != global.states.uppunch && state != global.states.slam):
+	if (state != global.states.grab
+	&& state != global.states.throw
+	&& state != global.states.shoulder
+	&& state != global.states.punch
+	&& state != global.states.backkick
+	&& state != global.states.uppunch
+	&& state != global.states.slam):
 		throwforce = 0
 	if (state != global.states.facestomp):
 		facestompAnim = false
 	if (state != global.states.slam):
 		slamming = false
-	if (state != global.states.freefall && state != global.states.facestomp && state != global.states.superslam && state != global.states.freefallland):
+	if (state != global.states.freefall
+	&& state != global.states.facestomp
+	&& state != global.states.superslam
+	&& state != global.states.freefallland):
 		superslam = 0
 	if (state != global.states.mach2):
 		machpunchAnim = false
@@ -128,16 +137,28 @@ func _process(delta):
 		ladderbuffer = 0
 	if (state != global.states.jump):
 		stompAnim = false
-	if ((state == global.states.mach3 || state == global.states.machroll || state == global.states.superslam || state == global.states.Sjump || state == global.states.machfreefall) && !utils.instance_exists("obj_mach3effect")):
+	if ((state == global.states.mach3
+	|| state == global.states.machroll
+	|| state == global.states.superslam
+	|| state == global.states.Sjump
+	|| state == global.states.machfreefall) && !utils.instance_exists("obj_mach3effect")):
 		toomuchalarm1 = 6
 		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_mach3effect.tscn")
 	if (toomuchalarm1 > 0):
 		toomuchalarm1 -= 1
-		if (toomuchalarm1 <= 0 && (state == global.states.mach3 || state == global.states.machroll || state == global.states.Sjump || state == global.states.machfreefall)):
+		if (toomuchalarm1 <= 0 && (state == global.states.mach3
+		|| state == global.states.machroll
+		|| state == global.states.Sjump
+		|| state == global.states.machfreefall)):
 			utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_mach3effect.tscn")
 			utils.instance_create(position.x - (75 * xscale), position.y, "res://Objects/Visuals/Effects/obj_mach3effect.tscn")
 			toomuchalarm1 = 6
-	if (state != global.states.bump && state != global.states.crouch && state != global.states.machroll && state != global.states.hurt && state != global.states.crouchslide && state != global.states.crouchjump):
+	if (state != global.states.bump
+	&& state != global.states.crouch
+	&& state != global.states.machroll
+	&& state != global.states.hurt
+	&& state != global.states.crouchslide
+	&& state != global.states.crouchjump):
 		crouchmask = false
 	else:
 		crouchmask = true
@@ -161,6 +182,8 @@ func _process(delta):
 			scr_player_freefall()
 		global.states.freefallland:
 			scr_player_freefallland()
+		global.states.freefallprep:
+			scr_player_freefallprep()
 		global.states.superslam:
 			scr_player_superslam()
 		global.states.machfreefall:
@@ -171,20 +194,37 @@ func _process(delta):
 			scr_player_mach2()
 		global.states.mach3:
 			scr_player_mach3()
+		global.states.machroll:
+			scr_player_machroll()
 		global.states.machslide:
 			scr_player_machslide()
 		global.states.bump:
 			scr_player_bump()
+		global.states.Sjump:
+			scr_player_Sjump()
+		global.states.Sjumpland:
+			scr_player_Sjumpland()
+		global.states.Sjumpprep:
+			scr_player_Sjumpprep()
 
 func _physics_process(delta):
 	var snap_vector = Vector2.ZERO
-	if (!Input.is_action_pressed("key_jump") && (state != global.states.jump && state != global.states.highjump && state != global.states.Sjump && state != global.states.Sjumpprep && state != global.states.bump && state != global.states.crouchjump) && is_on_floor()):
+	if (!Input.is_action_pressed("key_jump")
+	&& (state != global.states.jump
+	&& state != global.states.highjump
+	&& state != global.states.Sjump
+	&& state != global.states.Sjumpprep
+	&& state != global.states.bump
+	&& state != global.states.crouchjump) && is_on_floor()):
 		snap_vector = Vector2.DOWN * 20
-	if (state != global.states.gameover):
-		if (state != global.states.Sjumpland && state != global.states.gottreasure && state != global.states.keyget && state != global.states.ladder):
-			if (velocity.y < 20):
-				velocity.y += grav
-			velocity = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, true, 4, 1, false)
+	if (state != global.states.gameover
+	&& state != global.states.Sjumpland
+	&& state != global.states.gottreasure
+	&& state != global.states.keyget
+	&& state != global.states.ladder):
+		if (velocity.y < 20):
+			velocity.y += grav
+		velocity = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, true, 4, 1, false)
 			
 func is_colliding_with_wall():
 	if (($WallCheck.is_colliding() && $WallCheck.get_collider() != null && $WallCheck.get_collider().is_in_group("obj_wall")) ||
@@ -251,7 +291,7 @@ func scr_player_normal():
 		jumpstop = false
 		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_landcloud.tscn")
 		utils.playsound("Jump")
-	if ((Input.is_action_pressed("key_down") && is_on_floor()) || ($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("solid"))):
+	if ((Input.is_action_pressed("key_down") && is_on_floor()) || ($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("obj_wall"))):
 		state = global.states.crouch
 		machslideAnim = true
 		landAnim = false
@@ -486,14 +526,14 @@ func scr_player_crouch():
 		state = global.states.crouchjump
 		movespeed = 4
 		crouchAnim = true
-	if (Input.is_action_just_pressed("key_jump") && is_on_floor() && !($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("solid"))):
+	if (Input.is_action_just_pressed("key_jump") && is_on_floor() && !($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("obj_wall"))):
 		velocity.y = -9.2
 		state = global.states.crouchjump
 		movespeed = 4
 		crouchAnim = true
 		jumpAnim = true
 		utils.playsound("Jump")
-	if (is_on_floor() && !Input.is_action_pressed("key_down") && !($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("solid")) && !Input.is_action_just_pressed("key_jump")):
+	if (is_on_floor() && !Input.is_action_pressed("key_down") && !($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("obj_wall")) && !Input.is_action_just_pressed("key_jump")):
 		state = global.states.normal
 		movespeed = 0
 		crouchAnim = true
@@ -542,7 +582,7 @@ func scr_player_crouchjump():
 		jumpstop = false
 		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_landcloud.tscn")
 		utils.playsound("Land")
-	if (is_on_floor() && !Input.is_action_pressed("key_down") && !($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("solid")) && !Input.is_action_just_pressed("key_jump")):
+	if (is_on_floor() && !Input.is_action_pressed("key_down") && !($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("obj_wall")) && !Input.is_action_just_pressed("key_jump")):
 		state = global.states.normal
 		crouchAnim = true
 		landAnim = true
@@ -565,7 +605,7 @@ func scr_player_crouchslide():
 	if (movespeed >= 0):
 		movespeed -= 0.2
 	crouchmask = true
-	if (mach2 >= 35 && !Input.is_action_pressed("key_down") && !($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("solid")) && Input.is_action_pressed("key_dash")):
+	if (mach2 >= 35 && !Input.is_action_pressed("key_down") && !($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("obj_wall")) && Input.is_action_pressed("key_dash")):
 		machhitAnim = true
 		state = global.states.mach2
 	if (velocity.x == 0 || movespeed <= 0):
@@ -577,6 +617,7 @@ func scr_player_crouchslide():
 		machhitAnim = false
 		machslideAnim = true
 		movespeed = 0
+		$Sprite.frame = 0
 		state = global.states.bump
 		velocity.x = 2.5 * (-xscale)
 		velocity.y = -3
@@ -679,6 +720,17 @@ func scr_player_freefallland():
 		state = global.states.machfreefall
 		velocity.y = -7
 		
+func scr_player_freefallprep():
+	jumpAnim = true
+	landAnim = false
+	machslideAnim = true
+	crouchAnim = true
+	if (is_last_frame()):
+		state = global.states.mach2
+	$Sprite.animation = "mach2jump"
+	$Sprite.speed_scale = 0.35
+	utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_mach3effect.tscn")
+		
 func scr_player_superslam():
 	movespeed = 0
 	velocity.x = 0
@@ -724,6 +776,7 @@ func scr_player_machfreefall():
 	machslideAnim = true
 	if (is_colliding_with_wall()):
 		machhitAnim = false
+		$Sprite.frame = 0
 		state = global.states.bump
 		velocity.x = 2.5 * (-xscale)
 		velocity.y = -2.5
@@ -824,9 +877,9 @@ func scr_player_mach2():
 		machfreefall = 0
 	if (!is_on_floor()):
 		if (xscale == 1 && move == -1):
-			movespeed = 0
+			movespeed = 8
 		if (xscale == -1 && move == 1):
-			movespeed = 0
+			movespeed = 8
 	if (is_on_floor()):
 		if (mach2 < 100):
 			mach2 += 1
@@ -864,6 +917,7 @@ func scr_player_mach2():
 		velocity.y = -9
 	if (is_colliding_with_wall()):
 		machhitAnim = false
+		$Sprite.frame = 0
 		state = global.states.bump
 		velocity.x = 2.5 * (-xscale)
 		velocity.y = -3
@@ -935,7 +989,7 @@ func scr_player_mach3():
 	if (Input.is_action_pressed("key_up")):
 		utils.playsound("SuperMove")
 		velocity.y = -4
-		$Sprite.animation = "SuperJumpPrep"
+		$Sprite.animation = "superjumpprep"
 		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_machsuperjump1.tscn")
 		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_machsuperjump2.tscn")
 		state = global.states.Sjumpprep
@@ -957,6 +1011,7 @@ func scr_player_mach3():
 		for i in get_tree().get_nodes_in_group("obj_camera"):
 			i.shake_mag = 20
 			i.shake_mag_acc = (40 / 30)
+		$Sprite.frame = 0
 		$Sprite.speed_scale = 0.35
 		flash = false
 		combo = 0
@@ -970,6 +1025,46 @@ func scr_player_mach3():
 		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_chargeeffect.tscn")
 	if (!utils.instance_exists("obj_dashcloud") && is_on_floor()):
 		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_dashcloud.tscn")
+	$Sprite.speed_scale = 0.6
+	
+func scr_player_machroll():
+	var move = ((-int(Input.is_action_pressed("key_left"))) + int(Input.is_action_pressed("key_right")))
+	velocity.x = (xscale * movespeed)
+	mach2 = 100
+	machslideAnim = true
+	movespeed = 12
+	if ((!is_on_floor()) || (!Input.is_action_pressed("key_down") && !($CrouchCheck.is_colliding() && $CrouchCheck.get_collider() != null && $CrouchCheck.get_collider().is_in_group("obj_wall")))):
+		machhitAnim = true
+		state = global.states.mach2
+	if (is_colliding_with_wall()):
+		state = global.states.bump
+		utils.playsound("SuperImpact")
+		for i in get_tree().get_nodes_in_group("obj_baddie"):
+			if (i.is_on_floor() && i.screenvisible):
+				i.state = global.states.stun
+				i.velocity.y = -7
+				i.velocity.x = 0
+				i.stunned = 200
+		for i in get_tree().get_nodes_in_group("obj_camera"):
+			i.shake_mag = 20
+			i.shake_mag_acc = (40 / 30)
+		$Sprite.frame = 0
+		$Sprite.speed_scale = 0.35
+		flash = false
+		combo = 0
+		velocity.x = 2.5 * (-xscale)
+		velocity.y = -3
+		mach2 = 0
+		utils.instance_create(position.x + 10, position.y + 10, "res://Objects/Visuals/Effects/obj_bumpeffect.tscn")
+		utils.playsound("Bump")
+	if (is_on_floor()):
+		$Sprite.animation = "machroll"
+	if ($Sprite.frame == 0):
+		flash = true
+	else:
+		flash = false
+	if (!utils.instance_exists("obj_cloudeffect") && is_on_floor()):
+		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_cloudeffect.tscn")
 	$Sprite.speed_scale = 0.6
 	
 func scr_player_machslide():
@@ -995,6 +1090,7 @@ func scr_player_machslide():
 		machhitAnim = false
 		machslideAnim = true
 		movespeed = 0
+		$Sprite.frame = 0
 		state = global.states.bump
 		velocity.x = 2.5 * (-xscale)
 		velocity.y = -3
@@ -1012,13 +1108,78 @@ func scr_player_machslide():
 		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_slidecloud.tscn")
 	
 func scr_player_bump():
-	movespeed = 0
-	mach2 = 0
 	if (is_on_floor() && velocity.y >= 0):
 		velocity.x = 0
 	if (is_last_frame()):
 		state = global.states.normal
+	movespeed = 0
+	mach2 = 0
 	$Sprite.animation = "bump"
+	$Sprite.speed_scale = 0.35
+	
+func scr_player_Sjump():
+	mach2 = 0
+	jumpAnim = true
+	landAnim = false
+	machslideAnim = true
+	crouchAnim = false
+	machhitAnim = false
+	movespeed = 0
+	velocity.y -= 1
+	if (Input.is_action_just_pressed("key_dash")):
+		$Sprite.animation = "mach2jump"
+		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_machsuperjump1.tscn")
+		utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_machsuperjump2.tscn")
+		state = global.states.freefallprep
+		velocity.y = -4
+		mach2 = 35
+	if (is_on_ceiling()):
+		for i in get_tree().get_nodes_in_group("obj_baddie"):
+			if (i.is_on_floor() && i.screenvisible):
+				i.state = global.states.stun
+				i.velocity.y = -7
+				i.velocity.x = 0
+				i.stunned = 200
+		for i in get_tree().get_nodes_in_group("obj_camera"):
+			i.shake_mag = 10
+			i.shake_mag_acc = (30 / 30)
+		combo = 0
+		state = global.states.Sjumpland
+		machhitAnim = false
+		var effectid = utils.instance_create(position.x, position.y, "res://Objects/Visuals/Effects/obj_bangeffect.tscn")
+		effectid.scale.x = xscale
+		utils.playsound("FreefallLand")
+	$Sprite.animation = "superjump"
+	$Sprite.speed_scale = 0.5
+	
+func scr_player_Sjumpland():
+	mach2 = 0
+	jumpAnim = true
+	landAnim = false
+	machslideAnim = true
+	crouchAnim = false
+	machhitAnim = false
+	movespeed = 0
+	velocity.y = 0
+	velocity.x = 0
+	$Sprite.animation = "superjumpland"
+	if (is_last_frame()):
+		state = global.states.jump
+		jumpAnim = false
+
+func scr_player_Sjumpprep():
+	combo = 0
+	movespeed = 4
+	mach2 = 0
+	jumpAnim = true
+	landAnim = false
+	machslideAnim = true
+	crouchAnim = true
+	if (is_last_frame()):
+		utils.playsound("Plane")
+		state = global.states.Sjump
+		velocity.y = -15
+	$Sprite.animation = "superjumpprep"
 	$Sprite.speed_scale = 0.35
 
 func scr_playersounds():
@@ -1038,6 +1199,8 @@ func scr_playersounds():
 			utils.playsound("Mach2")
 		if (!utils.soundplaying("Woop")):
 			utils.playsound("Woop")
+	if (state == global.states.machroll && !utils.soundplaying("Roll")):
+		utils.playsound("Roll")
 	if (state != global.states.Sjump && utils.soundplaying("Plane")):
 		utils.stopsound("Plane")
 
