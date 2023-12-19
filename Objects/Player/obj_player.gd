@@ -4,6 +4,7 @@ extends KinematicBody2D
 const FLOOR_NORMAL = Vector2.UP
 var grav = 0.5
 var velocity = Vector2.ZERO
+var snap_vector = Vector2.ZERO
 
 var xscale = 1
 var yscale = 1
@@ -68,6 +69,10 @@ func _process(delta):
 		$Collision.set_deferred("disabled", true)
 	else:
 		$Collision.set_deferred("disabled", false)
+	if (!Input.is_action_just_pressed("key_jump") && is_on_floor() && input_buffer_jump >= 8):
+		snap_vector = Vector2.DOWN * 20
+	else:
+		snap_vector = Vector2.ZERO
 	if (input_buffer_jump < 8):
 		input_buffer_jump += 1
 	if (hurted):
@@ -207,15 +212,6 @@ func _process(delta):
 			scr_player_Sjumpprep()
 
 func _physics_process(delta):
-	var snap_vector = Vector2.ZERO
-	if (!Input.is_action_pressed("key_jump")
-	&& (state != global.states.jump
-	&& state != global.states.highjump
-	&& state != global.states.Sjump
-	&& state != global.states.Sjumpprep
-	&& state != global.states.bump
-	&& state != global.states.crouchjump) && is_on_floor()):
-		snap_vector = Vector2.DOWN * 20
 	if (state != global.states.gameover
 	&& state != global.states.Sjumpland
 	&& state != global.states.gottreasure
@@ -223,7 +219,7 @@ func _physics_process(delta):
 	&& state != global.states.ladder):
 		if (velocity.y < 20):
 			velocity.y += grav
-		velocity = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, true, 4, 1, false)
+		velocity = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, true, 4, 1)
 			
 func is_colliding_with_wall():
 	if (($WallCheck.is_colliding() && $WallCheck.get_collider() != null && $WallCheck.get_collider().is_in_group("obj_wall")) ||

@@ -26,6 +26,10 @@ scale = Vector2( 90, 2 )
 position = Vector2( 544, 352 )
 scale = Vector2( 5, 2 )
 
+[node name="obj_wall6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1792, 224 )
+scale = Vector2( 14, 6 )
+
 [node name="obj_slope" parent="." instance=ExtResource( 3 )]
 position = Vector2( 480, 352 )
 scale = Vector2( 2, 2 )
@@ -33,6 +37,14 @@ scale = Vector2( 2, 2 )
 [node name="obj_slope2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 768, 352 )
 scale = Vector2( -2, 2 )
+
+[node name="obj_slope3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1600, 224 )
+scale = Vector2( 6, 6 )
+
+[node name="obj_slope4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2432, 224 )
+scale = Vector2( -6, 6 )
 
 [node name="obj_platform" parent="." instance=ExtResource( 4 )]
 position = Vector2( 384, 256 )
