@@ -69,10 +69,14 @@ func _process(delta):
 		$Collision.set_deferred("disabled", true)
 	else:
 		$Collision.set_deferred("disabled", false)
-	if (!Input.is_action_just_pressed("key_jump") && is_on_floor() && input_buffer_jump >= 8):
-		snap_vector = Vector2.DOWN * 20
-	else:
-		snap_vector = Vector2.ZERO
+	snap_vector = Vector2.ZERO
+	if (state == global.states.mach1 || state == global.states.mach2 || state == global.states.mach3 || state == global.states.normal || state == global.states.machslide || state == global.states.machroll || state == global.states.crouch || state == global.states.crouchslide):
+		for i in $SlopeArea.get_overlapping_bodies():
+			if i.is_in_group("obj_slope"):
+				if (!Input.is_action_just_pressed("key_jump") && is_on_floor() && input_buffer_jump >= 8):
+					if (velocity.y >= -10):
+						velocity.y = 0
+					snap_vector = Vector2.DOWN * 50
 	if (input_buffer_jump < 8):
 		input_buffer_jump += 1
 	if (hurted):
@@ -219,7 +223,7 @@ func _physics_process(delta):
 	&& state != global.states.ladder):
 		if (velocity.y < 20):
 			velocity.y += grav
-		velocity = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, true, 4, 1)
+		velocity.y = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, true, 4, 1).y
 			
 func is_colliding_with_wall():
 	if (($WallCheck.is_colliding() && $WallCheck.get_collider() != null && $WallCheck.get_collider().is_in_group("obj_wall")) ||

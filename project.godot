@@ -121,6 +121,8 @@ key_dash={
 2d_physics/layer_2="collision"
 2d_physics/layer_3="objects"
 2d_physics/layer_4="non collidable objects"
+2d_physics/layer_5="wall"
+2d_physics/layer_6="slope"
 
 [physics]
 
